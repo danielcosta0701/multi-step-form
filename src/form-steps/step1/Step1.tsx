@@ -7,6 +7,7 @@ import { StepProps } from '../../types/StepTypes';
 import { GeneralFormData } from '../../types/MultiStepFormTypes';
 import { Button } from '../../components/buttons/Button';
 import { GENDERS_MOCK } from '../../mocks/mocks';
+import { SubmitHandler } from 'react-hook-form';
 
 interface FormStep1 {
     name: string,
@@ -30,7 +31,7 @@ export function Step1 (props: StepProps) {
         // }
     } = useForm<FormStep1>();
 
-    const onSubmit = (data: FormStep1) => {
+    const onSubmit: SubmitHandler<FormStep1> = (data) => {
         const obj = {
             name: data.name,
             surname: data.surname,

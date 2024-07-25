@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
 
 interface RangeProps {
@@ -9,11 +9,10 @@ interface RangeProps {
     step?: number;
     defaultValue?: number;
     register: UseFormRegisterReturn;
-    onInput?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
 export const Range = (props: RangeProps) => {
-    const { 
+    const {
         label,
         value,
         min,
@@ -21,8 +20,14 @@ export const Range = (props: RangeProps) => {
         step = 1,
         register,
         defaultValue,
-        onInput,
     } = props;
+
+    const [currentValue, setCurrentValue] = useState(value ?? defaultValue ?? min);
+
+    const handleInputChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
+        const value = Number(event.target.value);
+        setCurrentValue(value);
+    };
 
     return (
         <div>
@@ -31,15 +36,15 @@ export const Range = (props: RangeProps) => {
             </label>
             <input
                 type="range"
-                value={value}
+                value={currentValue}
                 min={min}
                 max={max}
                 step={step}
                 defaultValue={defaultValue}
                 {...register}
-                onInput={onInput}
+                onInput={handleInputChange}
             />
-            <output>{value}</output>
+            <output>{currentValue}</output>
         </div>
     );
 }

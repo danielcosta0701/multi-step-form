@@ -5,9 +5,9 @@ export type GeneralFormData = {
     email: string | null,
     gender: number | null,
     document_cpf: string | null,
-    loanAmount: number | null;
-    interestRate: number | null;
-    numberOfInstallments: number | null;
+    loan_amount: number | null;
+    interest_rate: number | null;
+    number_of_installments: number | null;
 };
 
 export type MultiStepFormContextType = {

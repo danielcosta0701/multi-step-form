@@ -6,7 +6,7 @@ import Step3 from './form-steps/step3/Step3';
 import { useMultiStepForm } from './contexts/MultiStepFormContext';
 
 function App() {
-  const [currentStep, setCurrentStep] = useState(0);
+  const [currentStep, setCurrentStep] = useState(1);
   const { formData, setFormData } = useMultiStepForm();
 
   const prevStep = () => {

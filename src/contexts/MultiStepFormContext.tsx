@@ -18,9 +18,9 @@ export const MultiStepFormProvider = (props: MultiStepFormProps) => {
         email: null,
         gender: null,
         document_cpf: null,
-        loanAmount: null,
-        interestRate: null,
-        numberOfInstallments: null,
+        loan_amount: null,
+        interest_rate: null,
+        number_of_installments: null,
     });
 
     return (

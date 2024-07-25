@@ -10,16 +10,16 @@ import { INSTALLMENTS_MOCK } from '../../mocks/mocks';
 
 interface FormStep2 {
   loan_amount: number;
-  interest_rate: number | null; // Adjust type to number for interest_rate
+  interest_rate: number | null;
   number_of_installments: number | null;
-  total_value: string;
+  total_value: number | string;
 }
 
 export default function Step2(props: StepProps) {
   const { prevStep, nextStep } = props;
   const { formData, setFormData } = useMultiStepForm();
   const [totalValue, setTotalValue] = useState<number | string>(0);
-  const [interestRate, setInterestRate] = useState<number | null>(0);
+  const [interestRate, setInterestRate] = useState<number>(0);
 
   const {
     register,
@@ -32,7 +32,7 @@ export default function Step2(props: StepProps) {
     const numberOfInstallments = getValues('number_of_installments');
 
     let interest = 0;
-    switch (numberOfInstallments) {
+    switch (parseInt(numberOfInstallments)) {
       case 1:
         interest = 10;
         break;
@@ -70,14 +70,13 @@ export default function Step2(props: StepProps) {
         interest = 60;
         break;
       default:
-        interest = 0;
+        interest = 1;
         break;
     }
 
-    setInterestRate(interest);
-
+    setInterestRate((prevInterest: number) => interest);
     const loanAmount = getValues('loan_amount');
-    const total = loanAmount + (loanAmount * interest / 100);
+    const total = loanAmount + ((loanAmount * interest) / 100);
     setTotalValue(total);
   };
 
@@ -100,15 +99,16 @@ export default function Step2(props: StepProps) {
             label="Número de parcelas"
             options={INSTALLMENTS_MOCK}
             placeholder="Escolha o número de parcelas"
-            onChange={handleTotalValueChange}
+            onInput={handleTotalValueChange}
             register={{ ...register("number_of_installments", { required: true }) }}
           />
           <Range
             label="Valor"
-            min={100}
-            max={1000}
-            step={100}
-            onInput={(handleTotalValueChange)}
+            defaultValue={0}
+            min={10}
+            max={100}
+            step={10}
+            onInput={handleTotalValueChange}
             register={{ ...register("loan_amount", { required: true }) }}
           />
 

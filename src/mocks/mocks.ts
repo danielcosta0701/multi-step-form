@@ -25,7 +25,7 @@ export const INSTALLMENTS_MOCK = [
   { 
       id: 2,
       value: 2,
-      label: "1"
+      label: "2"
   },
   { 
       id: 3,

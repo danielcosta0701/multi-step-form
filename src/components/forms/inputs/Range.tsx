@@ -7,6 +7,7 @@ interface RangeProps {
     min: number;
     max: number;
     step?: number;
+    defaultValue?: number;
     register: UseFormRegisterReturn;
     onInput?: React.ChangeEventHandler<HTMLInputElement>;
 }
@@ -19,6 +20,7 @@ export const Range = (props: RangeProps) => {
         max,
         step = 1,
         register,
+        defaultValue,
         onInput,
     } = props;
 
@@ -33,6 +35,7 @@ export const Range = (props: RangeProps) => {
                 min={min}
                 max={max}
                 step={step}
+                defaultValue={defaultValue}
                 {...register}
                 onInput={onInput}
             />

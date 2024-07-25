@@ -13,7 +13,7 @@ interface SelectProps {
     placeholder: string,
     options: Option[],
     register: UseFormRegisterReturn,
-    onChange?: React.ChangeEventHandler<HTMLSelectElement>;
+    onInput?: React.ChangeEventHandler<HTMLSelectElement>;
 }
 
 export const Select = (props: SelectProps) => {
@@ -23,7 +23,7 @@ export const Select = (props: SelectProps) => {
         placeholder, 
         options,
         register,
-        onChange
+        onInput
     } = props;
 
     return (
@@ -35,7 +35,7 @@ export const Select = (props: SelectProps) => {
                 value={value}
                 defaultValue=""
                 {...register}
-                onChange={onChange}
+                onInput={onInput}
             >
                 <option value="" disabled>
                     {placeholder}

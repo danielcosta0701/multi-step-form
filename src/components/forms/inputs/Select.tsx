@@ -2,13 +2,14 @@ import React from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
 
 interface Option {
-    value: string;
+    id: number,
+    value: number | string;
     label: string;
 }
 
 interface SelectProps {
     label: string,
-    value: string,
+    value?: number | string,
     placeholder: string,
     options: Option[],
     register: UseFormRegisterReturn,
@@ -32,12 +33,12 @@ export const Select = (props: SelectProps) => {
                 value={value}
                 {...register}
             >
-                <option value="" disabled>
+                <option value="" disabled selected>
                     {placeholder}
                 </option>
                 
                 {options && options.map((option) => (
-                    <option key={option.value} value={option.value}>
+                    <option key={option.id} value={option.value}>
                         {option.label}
                     </option>
                 ))}

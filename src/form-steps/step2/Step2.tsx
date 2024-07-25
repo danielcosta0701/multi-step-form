@@ -3,7 +3,7 @@ import { Input } from '../../components/forms/inputs/Input';
 import { Select } from '../../components/forms/inputs/Select';
 import { useMultiStepForm } from '../../contexts/MultiStepFormContext';
 import { useForm } from "react-hook-form"
-import { StepProps } from '../../types/Types';
+import { StepProps } from '../../types/StepTypes';
 
 // interface FormStep2 {
 //   loanAmount: number;

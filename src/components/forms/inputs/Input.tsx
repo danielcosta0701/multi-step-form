@@ -3,7 +3,7 @@ import { UseFormRegisterReturn } from 'react-hook-form';
 
 interface InputProps {
     label: string,
-    type: string,
+    type?: string,
     placeholder: string,
     register: UseFormRegisterReturn,
 }

@@ -1,4 +1,3 @@
-import React from 'react';
 import { useForm } from "react-hook-form"
 import { Input } from '../../components/forms/inputs/Input';
 import { Select } from '../../components/forms/inputs/Select';

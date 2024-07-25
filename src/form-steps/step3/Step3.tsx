@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Step3 = ({ prevStep, nextStep }) => {
   return (
     <>

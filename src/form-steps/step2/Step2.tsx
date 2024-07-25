@@ -31,6 +31,17 @@ export default function Step2(props: StepProps) {
   const loanAmount = parseFloat(watch('loan_amount'));
   const numberOfInstallments = parseFloat(watch('number_of_installments'));
 
+  const onSubmit: SubmitHandler<FormStep2> = (data) => {
+    const obj = {
+      loan_amount: data.loan_amount,
+      interest_rate: interestRate,
+      number_of_installments: data.number_of_installments,
+    };
+
+    setFormData((prevFormData: GeneralFormData) => ({ ...prevFormData, ...obj }));
+    nextStep();
+  };
+
   useEffect(() => {
     const installment = INSTALLMENTS_MOCK.find(option => option.value === numberOfInstallments);
     
@@ -44,17 +55,6 @@ export default function Step2(props: StepProps) {
     }
 
   }, [loanAmount, numberOfInstallments]);
-
-  const onSubmit: SubmitHandler<FormStep2> = (data) => {
-    const obj = {
-      loan_amount: data.loan_amount,
-      interest_rate: interestRate,
-      number_of_installments: data.number_of_installments,
-    };
-
-    setFormData((prevFormData: GeneralFormData) => ({ ...prevFormData, ...obj }));
-    nextStep();
-  };
 
   return (
     <>

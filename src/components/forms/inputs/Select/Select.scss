@@ -2,7 +2,6 @@
 @import '../../../../styles/base/mixins.scss';
 
 .select-container {
-  @include margin($margin-medium, 0);
 
   label {
     @include font($body-font-size); 
@@ -12,8 +11,8 @@
 
   select {
     width: 100%;
-    @include padding($padding-small, $padding-medium);
     border: 1px solid $border-color; 
+    padding: $padding-small $padding-medium;
     @include border-radius($border-radius-small);
     @include font($body-font-size);
     color: $text-color;

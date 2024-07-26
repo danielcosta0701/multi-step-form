@@ -6,12 +6,11 @@ export const showInstallmentsTableModal = () => {
   const MySwal = withReactContent(Swal);
   
   MySwal.fire({
-    title: 'Tabela de Juros por Parcelas',
     html: <InstallmentsTable />,
     showCloseButton: true,
     showCancelButton: false,
+    showConfirmButton: false,
     focusConfirm: false,
-    confirmButtonText: 'Fechar',
     customClass: {
       container: 'swal-container',
     },

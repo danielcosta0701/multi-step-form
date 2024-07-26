@@ -2,7 +2,7 @@
 @import '../../../../styles/base/mixins.scss';
 
 .input-container {
-  @include margin($margin-medium, 0);
+  
 
   label {
     @include font($body-font-size);
@@ -46,7 +46,6 @@
 
   .error-message {
     color: $error-color;
-    border: 2px solid $error-color;
     @include font(0.875rem);
     @include margin($margin-small, 0);
   }

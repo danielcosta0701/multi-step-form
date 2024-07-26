@@ -20,7 +20,7 @@
 
   &.filled {
     background-color: $primary-color;
-    color: $text-color;
+    color: white;
     border: 1px solid $primary-color;
     
     &:hover:not(:disabled) {

@@ -1,53 +1,71 @@
 @import '../../styles/base/variables.scss';
 @import '../../styles/base/mixins.scss';
 
-.stepper {
-  @include flex-center(column);
-  gap: $spacing-unit * 2;
-  margin: $spacing-unit * 2 0;
-}
+.step3-container {
+  @include padding($padding-large);
+  text-align: center;
+  background-color: $background-color;
 
-.stepper-titles {
-  @include flex-center(column);
-  gap: $spacing-unit;
-}
+  .thank-you-message {
+    margin-bottom: $margin-large;
 
-.step {
-  @include flex-center(row);
-  background-color: $border-color;
-  @include padding($padding-small);
-  @include border-radius($border-radius-small);
-  transition: background-color $transition-speed;
-  cursor: default;
-
-  &.active {
-    background-color: $link-color;
-    color: $text-color;
-  }
-  
-  .step-number {
-    width: 30px;
-    height: 30px;
-    @include border-radius(50%);
-    background-color: #fff;
-    color: $link-color;
-    @include flex-center();
-    font-weight: bold;
-    margin-right: calc($spacing-unit / 2);
-  }
-
-  .step-details {
-    @include flex-center(column);
-    gap: calc($spacing-unit / 2);
-
-    h3 {
-      margin: 0;
-      @include font($subheading-font-size, bold);
+    h1 {
+      font-size: $heading-font-size;
+      color: $primary-color;
     }
 
     p {
-      margin: calc($spacing-unit / 2) 0 0;
-      @include font($body-font-size, normal);
+      font-size: $body-font-size;
+      color: $text-color;
+      margin: $margin-small 0;
     }
+  }
+
+  .request-data {
+    margin-bottom: $margin-large;
+
+    h2 {
+      font-size: $subheading-font-size;
+      color: $primary-color;
+      margin-bottom: $margin-medium;
+    }
+
+    .data-list-container {
+      background-color: $accent-color;
+      padding: $padding-medium;
+      border-radius: $border-radius-medium;
+      box-shadow: $box-shadow-medium;
+
+      .data-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: $spacing-unit;
+
+        li {
+          flex: 1 1 calc(50% - $spacing-unit);
+          margin-bottom: $spacing-unit;
+          font-size: $body-font-size;
+          color: $text-color;
+          border: 1px solid $border-color;
+          padding: $padding-small;
+          border-radius: $border-radius-small;
+          background-color: #fff;
+
+          strong {
+            color: $secondary-color;
+          }
+        }
+      }
+    }
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-unit;
+    margin-top: $spacing-unit;
   }
 }

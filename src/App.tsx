@@ -42,8 +42,6 @@ function App() {
     }
   ];
 
-  const boxVariant = currentStep === steps.length - 1 ? "filled" : "outlined";
-
   return (
     <div className="app-container">
       <Header logo={<img src="" alt="Logo" />} />
@@ -59,7 +57,7 @@ function App() {
         </Container.Left>
 
         <Container.Right>
-          <Box variant={boxVariant}>
+          <Box>
             <h3>Simular crédito</h3>
             <Stepper 
               currentStep={currentStep} 

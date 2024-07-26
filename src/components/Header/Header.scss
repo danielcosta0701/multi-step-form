@@ -5,7 +5,7 @@
   @include flex-center(row, space-between);
   background-color: $background-color;
   color: $text-color;
-  @include padding($padding-medium);
+  @include padding($padding-large);
   border-bottom: 1px solid $border-color;
   @include box-shadow($box-shadow-small);
   font-family: $font-primary;

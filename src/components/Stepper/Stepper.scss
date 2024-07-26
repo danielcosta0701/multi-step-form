@@ -4,19 +4,21 @@
 .stepper {
   @include flex-center(column);
   gap: $spacing-unit;
-  margin: $spacing-unit * 2 0;
 
   .stepper-titles {
     @include flex-center(row);
     gap: calc($spacing-unit / 2);
+    width: 100%;
   }
 
   .step {
-    @include flex-center(row);
+    @include flex-center(column);
     background-color: $border-color;
     @include padding($padding-small);
     @include border-radius($border-radius-small);
     transition: background-color $transition-speed;
+    flex: 1;
+    text-align: center;
 
     .step-number {
       width: 30px;
@@ -26,7 +28,7 @@
       color: $link-color;
       @include flex-center();
       font-weight: bold;
-      margin-right: calc($spacing-unit / 2);
+      margin-bottom: $spacing-unit / 2; 
     }
 
     .step-details {
@@ -39,14 +41,14 @@
       }
 
       p {
-        margin: calc($spacing-unit / 2) 0 0;
+        margin: 0;
         @include font(14px, normal);
       }
     }
 
     &.active {
       background-color: $primary-color;
-      color: $text-color;
+      color: white;
     }
   }
 }

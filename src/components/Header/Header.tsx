@@ -7,13 +7,18 @@ interface HeaderProps {
     className?: string;
 }
 
-const Header = ({ logo, className = "" }: HeaderProps) => {
+const Header = (props: HeaderProps) => {
+    const {
+        logo, 
+        className
+    } = props;
+
     return (
         <header className={`header ${className}`}>
             <div className="header-logo">
                 {logo}
             </div>
-            <Menu /> {/* Inclui o componente Menu */}
+            <Menu />
         </header>
     );
 }

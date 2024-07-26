@@ -6,7 +6,12 @@ interface LeftContainerProps {
     className?: string;
 }
 
-const LeftContainer = ({ children, className = "" }: LeftContainerProps) => {
+const LeftContainer = (props: LeftContainerProps) => {
+    const {
+        children,
+        className
+    } = props;
+
     return (
         <div className={`left-container ${className}`}>
             {children}

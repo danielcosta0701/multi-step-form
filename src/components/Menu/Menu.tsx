@@ -1,11 +1,14 @@
-import React from 'react';
 import './Menu.scss';
 
 interface MenuProps {
     className?: string;
 }
 
-const Menu = ({ className = "" }: MenuProps) => {
+const Menu = (props: MenuProps) => {
+    const {
+        className
+    } = props;
+
     return (
         <nav className={`menu ${className}`}>
             <ul>

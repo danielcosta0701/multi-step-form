@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { UseFormRegisterReturn, FieldError } from 'react-hook-form';
-import './Range.scss'; // Importar o arquivo de estilos
+import './Range.scss';
 
 interface RangeProps {
     label: string;
@@ -10,7 +10,7 @@ interface RangeProps {
     step?: number;
     defaultValue?: number;
     register: UseFormRegisterReturn;
-    error?: FieldError; // Adicionar a propriedade de erro
+    error?: FieldError;
 }
 
 export const Range = (props: RangeProps) => {
@@ -48,7 +48,7 @@ export const Range = (props: RangeProps) => {
                 onInput={handleInputChange}
             />
             <output>{currentValue}</output>
-            {error && <p className="error-message">{error.message}</p>} {/* Exibir a mensagem de erro */}
+            {error && <p className="error-message">{error.message}</p>}
         </div>
     );
 }

@@ -1,10 +1,9 @@
-import React from 'react';
-import './InstallmentsTable.scss'; // Importa o arquivo SCSS
+import './InstallmentsTable.scss';
 import { INSTALLMENTS_MOCK } from '../../mocks/mocks';
 
 const InstallmentsTable = () => {
   return (
-    <div className="table-container"> {/* Usa a classe CSS diretamente */}
+    <div className="table-container"> 
       <h2>Tabela de Juros por Parcelas</h2>
       <table>
         <thead>

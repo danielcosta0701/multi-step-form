@@ -1,10 +1,12 @@
 import React from 'react';
+import './Button.scss';
 
 interface ButtonProps {
     children: React.ReactNode;
     type?: "button" | "reset" | "submit";
     disabled?: boolean;
     onClick?: () => void;
+    variant?: "filled" | "outlined";
 } 
 
 const Button = (props: ButtonProps) => {
@@ -13,14 +15,15 @@ const Button = (props: ButtonProps) => {
         type = "button",
         disabled,
         onClick,
+        variant = "filled", 
     } = props;
-
 
     return (
         <button
             type={type}
             disabled={disabled}
             onClick={onClick}
+            className={`button ${variant}`}
         >
             { children }
         </button>
@@ -32,9 +35,8 @@ const ButtonText = (props: ButtonProps) => {
         children
     } = props;
 
-
     return (
-        <span>
+        <span className="button-text">
             { children }
         </span>
     );
@@ -42,4 +44,4 @@ const ButtonText = (props: ButtonProps) => {
 
 Button.Text = ButtonText;
 
-export { Button }
+export { Button };

@@ -1,0 +1,62 @@
+/* Estilos gerais para o container do input */
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+
+/* Estilos para o rótulo do input */
+.input-container label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+/* Estilos para o input em diferentes tipos */
+.input-container input[type="text"],
+.input-container input[type="email"],
+.input-container input[type="password"],
+.input-container input[type="number"],
+.input-container input[type="search"],
+.input-container input[type="tel"],
+.input-container input[type="url"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    
+    &:focus {
+        border-color: #007bff;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+    }
+
+    &::placeholder {
+        color: #888;
+    }
+
+    &:disabled {
+        background-color: #f5f5f5;
+        cursor: not-allowed;
+    }
+
+    /* Estilos para o estado de erro do input */
+    &.error {
+        border-color: #dc3545; /* Cor da borda em caso de erro */
+    }
+
+    /* Estilos para o estado de sucesso do input */
+    &.valid {
+        border-color: #28a745; /* Cor da borda em caso de sucesso */
+    }
+}
+
+/* Estilos para a mensagem de erro */
+.input-container .error-message {
+    color: #dc3545; /* Cor da mensagem de erro */
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}

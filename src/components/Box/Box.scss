@@ -1,0 +1,18 @@
+.box {
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff; // cor de fundo padrão
+    border: 1px solid #ddd; // borda padrão
+  
+    &.filled {
+      background-color: #f8f9fa; // cor de fundo para o estado preenchido
+      border: 1px solid #ccc; // cor de borda para o estado preenchido
+    }
+  
+    &.outlined {
+      background-color: #fff; // cor de fundo para o estado contornado
+      border: 1px solid #007bff; // cor de borda para o estado contornado
+    }
+  }
+  

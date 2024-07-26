@@ -1,0 +1,48 @@
+// Variáveis para cores e fontes
+$header-background-color: #fff;
+$header-text-color: #333;
+$header-border-bottom: #ddd;
+$header-padding: 1rem;
+$font-family: Arial, sans-serif;
+
+// Estilo base para o Header
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $header-background-color;
+    color: $header-text-color;
+    padding: $header-padding;
+    border-bottom: 1px solid $header-border-bottom;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: $font-family;
+
+    .header-logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+    }
+
+    .header-menu {
+        display: flex;
+        gap: 1rem; // Espaçamento entre os itens do menu
+    }
+}
+
+// Responsividade básica
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; // Alinha logo e menu verticalmente em dispositivos móveis
+        padding: 0.5rem;
+        text-align: center; // Centraliza o texto
+
+        .header-logo {
+            margin-bottom: 1rem;
+        }
+
+        .header-menu {
+            flex-direction: column; // Alinha itens do menu verticalmente
+            gap: 0.5rem;
+        }
+    }
+}

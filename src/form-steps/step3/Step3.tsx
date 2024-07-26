@@ -1,15 +1,46 @@
-import React from 'react';
+import { useMultiStepForm } from '../../contexts/MultiStepFormContext';
+import { StepProps } from '../../types/StepTypes';
+import { Button } from '../../components/Buttons/Button';
+import './Step3.scss';
 
-const Step3 = ({ prevStep, nextStep }) => {
-  return (
-    <>
-      <div>
-        <button onClick={prevStep}>Anterior</button>
-        <p>step 3</p>
-        <button onClick={nextStep}>Próximo</button>
-      </div>
-    </>
-  );
-};
+export default function Step3(props: StepProps) {
+    const { prevStep } = props;
+    const { formData } = useMultiStepForm();
 
-export default Step3;
+    const {
+        name,
+        surname,
+        phone,
+        email,
+        gender,
+        document_cpf,
+        loan_amount,
+        interest_rate,
+        number_of_installments
+    } = formData;
+
+    return (
+        <div className="step3-content">
+            <h1>Obrigado!</h1>
+            <p>
+                Recebemos suas informações e estamos analisando sua solicitação.
+                Nossa equipe entrará em contato com você em breve para fornecer mais detalhes.
+            </p>
+            <h2>Dados da Solicitação</h2>
+            <ol className="data-list">
+                <li><strong>Nome:</strong> {name ?? 'Não informado'}</li>
+                <li><strong>Sobrenome:</strong> {surname ?? 'Não informado'}</li>
+                <li><strong>Telefone:</strong> {phone ?? 'Não informado'}</li>
+                <li><strong>Email:</strong> {email ?? 'Não informado'}</li>
+                <li><strong>Gênero:</strong> {gender ?? 'Não informado'}</li>
+                <li><strong>CPF:</strong> {document_cpf ?? 'Não informado'}</li>
+                <li><strong>Valor do Empréstimo:</strong> {loan_amount ?? 'Não informado'}</li>
+                <li><strong>Taxa de Juros:</strong> {interest_rate ?? 'Não informado'}</li>
+                <li><strong>Número de Parcelas:</strong> {number_of_installments ?? 'Não informado'}</li>
+            </ol>
+            <Button onClick={prevStep} variant="outlined">
+                <Button.Text>Anterior</Button.Text>
+            </Button>
+        </div>
+    );
+}

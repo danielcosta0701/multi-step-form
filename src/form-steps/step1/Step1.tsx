@@ -24,8 +24,10 @@ export default function Step1(props: StepProps) {
         register, 
         handleSubmit, 
         reset, 
-        formState: { errors }
-    } = useForm<FormStep1>();
+        formState: { errors, isValid }
+    } = useForm<FormStep1>({
+        mode: 'onChange' // Para que o isValid seja atualizado em tempo real
+    });
 
     const onSubmit: SubmitHandler<FormStep1> = (data) => {
         const obj = {
@@ -92,7 +94,7 @@ export default function Step1(props: StepProps) {
                         <Button.Text>Limpar</Button.Text>
                     </Button>
                     
-                    <Button type="submit">  
+                    <Button type="submit" disabled={!isValid}>  
                         <Button.Text>Próximo</Button.Text>
                     </Button>
                 </form>

@@ -47,10 +47,15 @@
     &.error {
         border-color: #dc3545; /* Cor da borda em caso de erro */
     }
+
+    /* Estilos para o estado de sucesso do input */
+    &.valid {
+        border-color: #28a745; /* Cor da borda em caso de sucesso */
+    }
 }
 
 /* Estilos para a mensagem de erro */
-.input-container .input-error {
+.input-container .error-message {
     color: #dc3545; /* Cor da mensagem de erro */
     font-size: 0.875rem;
     margin-top: 0.5rem;

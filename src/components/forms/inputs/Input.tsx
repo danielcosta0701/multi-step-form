@@ -28,6 +28,7 @@ export const Input = (props: InputProps) => {
                 type={type}
                 placeholder={placeholder}
                 {...register}
+                className={error && 'error'} // Adicionar a classe de erro ou valida
             />
             {error && <p className="error-message">{error.message}</p>} {/* Exibir a mensagem de erro */}
         </div>

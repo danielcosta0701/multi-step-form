@@ -24,11 +24,11 @@ export const Select = (props: SelectProps) => {
         placeholder, 
         options,
         register,
-        error,
+        error
     } = props;
 
     return (
-        <div className="select-container">
+        <div className={`select-container ${error ? 'error' : ''}`}>
             <label>
                 {label}
             </label>
@@ -36,6 +36,7 @@ export const Select = (props: SelectProps) => {
                 value={value}
                 defaultValue=""
                 {...register}
+                className={error ? 'error' : ''}
             >
                 <option value="" disabled>
                     {placeholder}

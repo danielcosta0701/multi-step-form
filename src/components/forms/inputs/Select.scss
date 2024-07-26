@@ -36,6 +36,12 @@
         cursor: not-allowed;
     }
 
+    /* Estilos para o estado de erro do select */
+    &.error {
+        border-color: #dc3545; /* Cor da borda em caso de erro */
+        box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.2); /* Sombra em caso de erro */
+    }
+
     /* Customização do ícone do dropdown */
     &::-ms-expand {
         display: none; /* Remove a seta padrão do IE */
@@ -46,12 +52,6 @@
 .select-container option:first-of-type {
     color: #888;
     font-style: italic;
-}
-
-/* Estilos para exibir mensagem de erro */
-.select-container.error select {
-    border-color: #dc3545; /* Cor do borda em caso de erro */
-    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.2); /* Sombra em caso de erro */
 }
 
 /* Estilos para a mensagem de erro */

@@ -26,11 +26,11 @@ export default function Step2(props: StepProps) {
     handleSubmit, 
     watch, 
     reset,
-    formState: { errors } // Obter erros do formulário
-  } = useForm<FormStep2>();
+    formState: { errors, isValid }, // Obter erros e validade do formulário
+  } = useForm<FormStep2>({ mode: 'onChange' }); // Modo 'onChange' para validar conforme o usuário preenche
 
-  const loanAmount = parseFloat(watch('loan_amount'));
-  const numberOfInstallments = parseFloat(watch('number_of_installments'));
+  const loanAmount = parseFloat(watch('loan_amount', '0')); // Default para '0'
+  const numberOfInstallments = parseFloat(watch('number_of_installments', '0')); // Default para '0'
 
   const onSubmit: SubmitHandler<FormStep2> = (data) => {
     const obj = {
@@ -78,21 +78,21 @@ export default function Step2(props: StepProps) {
             error={errors.loan_amount} // Passar erro para o Range
           />
 
-          <Button onClick={() => reset()}>
+          <Button onClick={() => reset()} variant="outlined">
             <Button.Text>Limpar</Button.Text>
           </Button>
 
-          <Button onClick={prevStep}>
+          <Button onClick={prevStep} variant="outlined">
             <Button.Text>Anterior</Button.Text>
           </Button>
 
-          <Button type="submit">
+          <Button type="submit" disabled={!isValid}>
             <Button.Text>Próximo</Button.Text>
           </Button>
         </form>
+        
+        <div>Total: R$ {totalValue}</div>
       </div>
-
-      <div>Total: R$ {totalValue}</div>
     </>
   );
 }

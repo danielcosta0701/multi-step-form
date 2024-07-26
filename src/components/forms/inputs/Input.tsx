@@ -1,4 +1,3 @@
-import React from 'react';
 import { UseFormRegisterReturn, FieldError } from 'react-hook-form';
 import './Input.scss'; // Importar o arquivo de estilos
 

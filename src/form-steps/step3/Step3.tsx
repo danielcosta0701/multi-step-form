@@ -1,6 +1,6 @@
 import { useMultiStepForm } from '../../contexts/MultiStepFormContext';
 import { StepProps } from '../../types/StepTypes';
-import { Button } from '../../components/Buttons/Button';
+import { Button } from '../../components/buttons/Button';
 import './Step3.scss';
 
 export default function Step3(props: StepProps) {

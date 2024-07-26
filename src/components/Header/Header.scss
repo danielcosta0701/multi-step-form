@@ -1,48 +1,42 @@
-// Variáveis para cores e fontes
-$header-background-color: #fff;
-$header-text-color: #333;
-$header-border-bottom: #ddd;
-$header-padding: 1rem;
-$font-family: Arial, sans-serif;
+// Importando variáveis e mixins
+@import '../../styles/base/variables.scss';
+@import '../../styles/base/mixins.scss';
 
 // Estilo base para o Header
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: $header-background-color;
-    color: $header-text-color;
-    padding: $header-padding;
-    border-bottom: 1px solid $header-border-bottom;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    font-family: $font-family;
+  @include flex-center(row, space-between); // Usando mixin para layout flexível com espaçamento
+  background-color: $background-color; // Cor de fundo do cabeçalho usando variável
+  color: $text-color; // Cor do texto usando variável
+  @include padding($padding-medium); // Padding usando variável
+  border-bottom: 1px solid $border-color; // Borda inferior usando variável
+  @include box-shadow($box-shadow-small); // Sombra usando variável
+  font-family: $font-primary; // Fonte usando variável
 
-    .header-logo {
-        display: flex;
-        align-items: center;
-        font-size: 1.5rem;
-    }
+  .header-logo {
+    @include flex-center(row); // Alinhamento horizontal do logo
+    font-size: $heading-font-size; // Tamanho da fonte do logo usando variável
+  }
 
-    .header-menu {
-        display: flex;
-        gap: 1rem; // Espaçamento entre os itens do menu
-    }
+  .header-menu {
+    @include flex-center(row); // Alinhamento horizontal do menu
+    gap: $spacing-unit; // Espaçamento entre itens do menu usando variável
+  }
 }
 
 // Responsividade básica
 @media (max-width: 768px) {
-    .header {
-        flex-direction: column; // Alinha logo e menu verticalmente em dispositivos móveis
-        padding: 0.5rem;
-        text-align: center; // Centraliza o texto
+  .header {
+    @include flex-center(column); // Alinhamento vertical do cabeçalho em dispositivos móveis
+    @include padding($padding-small); // Padding reduzido para dispositivos móveis
+    text-align: center; // Centraliza o texto
 
-        .header-logo {
-            margin-bottom: 1rem;
-        }
-
-        .header-menu {
-            flex-direction: column; // Alinha itens do menu verticalmente
-            gap: 0.5rem;
-        }
+    .header-logo {
+      @include margin(0, $spacing-unit); // Margem inferior usando variável
     }
+
+    .header-menu {
+      @include flex-center(column); // Alinhamento vertical dos itens do menu
+      gap: $spacing-unit / 2; // Espaçamento reduzido para layout vertical
+    }
+  }
 }

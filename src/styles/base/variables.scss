@@ -1,0 +1,49 @@
+// src/styles/_variables.scss
+
+// ** Cores **
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$accent-color: #e74c3c;
+$background-color: #f5f5f5;
+$text-color: #333;
+$muted-text-color: #777;
+$error-color: #e74c3c;
+$success-color: #2ecc71;
+$warning-color: #f39c12;
+
+// ** Fontes **
+$font-primary: 'Helvetica, Arial, sans-serif';
+$font-secondary: 'Georgia, serif';
+$base-font-size: 16px;
+$heading-font-size: 2rem; // Font size for headings (h1, h2, etc.)
+$subheading-font-size: 1.5rem;
+$body-font-size: 1rem; // Default font size for body text
+
+// ** Espaçamentos (Paddings e Margens) **
+$spacing-unit: 1rem; // Base unit for spacing
+$padding-small: $spacing-unit / 2;
+$padding-medium: $spacing-unit;
+$padding-large: $spacing-unit * 2;
+
+$margin-small: $spacing-unit / 2;
+$margin-medium: $spacing-unit;
+$margin-large: $spacing-unit * 2;
+
+// ** Box Shadows **
+$box-shadow-small: 0 1px 3px rgba(0, 0, 0, 0.1);
+$box-shadow-medium: 0 2px 6px rgba(0, 0, 0, 0.1);
+$box-shadow-large: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+// ** Bordas e Bordas Arredondadas **
+$border-color: #ddd;
+$border-radius-small: 4px;
+$border-radius-medium: 8px;
+$border-radius-large: 16px;
+
+// Links **
+$link-color: $primary-color;
+$link-hover-color: $secondary-color;
+
+// ** Outros **
+$transition-speed: 0.3s; // Speed for transition effects
+$opacity-disabled: 0.6; // Opacity for disabled elements

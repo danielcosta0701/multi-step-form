@@ -1,22 +1,26 @@
+// Importando variáveis e mixins
+@import '../../styles/base/variables.scss';
+@import '../../styles/base/mixins.scss';
+
 // Estilos para o RightContainer
 .right-container {
-    background-color: red;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
+  background-color: $accent-color; // Cor de fundo usando variável
+  padding: $padding-medium; // Padding usando variável
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1; // Flexível por padrão
 
-    @media (max-width: 768px) {
-        width: 100%;
-        flex: none;
-    }
+  @media (max-width: 768px) {
+    width: 100%; // Largura total para dispositivos móveis
+    flex: none; // Remove o comportamento flexível
+  }
 
-    @media (min-width: 769px) and (max-width: 1024px) {
-        flex: 1;
-    }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    flex: 1; // Flexível em tamanhos de tela intermediários
+  }
 
-    @media (min-width: 1025px) {
-        flex: 1 1 66%;
-    }
+  @media (min-width: 1025px) {
+    flex: 1 1 66%; // Flexível com base na proporção de 66% para telas maiores
+  }
 }

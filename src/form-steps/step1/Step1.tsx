@@ -4,7 +4,7 @@ import { Select } from '../../components/forms/inputs/Select';
 import { useMultiStepForm } from '../../contexts/MultiStepFormContext';
 import { StepProps } from '../../types/StepTypes';
 import { GeneralFormData } from '../../types/MultiStepFormTypes';
-import { Button } from '../../components/Buttons/Button';
+import { Button } from '../../components/buttons/Button';
 import { GENDERS_MOCK } from '../../mocks/mocks';
 import { showSuccessToast } from "../../utils/ToastSucess";
 

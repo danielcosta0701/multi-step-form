@@ -1,42 +1,46 @@
+// Importando variáveis e mixins
+@import '../../styles/base/variables.scss';
+@import '../../styles/base/mixins.scss';
+
+// Estilo base para o contêiner da tabela
 .table-container {
-    margin: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  
-    h2 {
-      margin-bottom: 15px;
-      font-size: 24px;
-      color: #333;
-    }
-  
-    table {
-      width: 100%;
-      border-collapse: collapse;
-  
-      thead {
-        background-color: #f4f4f4;
-  
-        th {
-          border: 1px solid #ddd;
-          padding: 12px;
-          text-align: left;
-          color: #555;
-        }
+  @include margin($margin-medium); // Margem usando variável
+  @include padding($padding-medium); // Padding usando variável
+  border: 1px solid $border-color; // Borda usando variável
+  @include border-radius($border-radius-medium); // Bordas arredondadas usando variável
+  @include box-shadow($box-shadow-medium); // Sombra usando variável
+
+  h2 {
+    margin-bottom: $spacing-unit; // Margem inferior usando variável
+    @include font($heading-font-size, bold); // Tamanho e peso da fonte usando mixin
+    color: $text-color; // Cor do texto usando variável
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    thead {
+      background-color: $background-color; // Cor de fundo usando variável
+
+      th {
+        border: 1px solid $border-color; // Borda das células de cabeçalho usando variável
+        @include padding($padding-medium); // Padding das células de cabeçalho usando variável
+        text-align: left;
+        color: $muted-text-color; // Cor do texto das células de cabeçalho usando variável
       }
-  
-      tbody {
-        tr:nth-child(even) {
-          background-color: #f9f9f9;
-        }
-  
-        td {
-          border: 1px solid #ddd;
-          padding: 12px;
-          text-align: left;
-        }
+    }
+
+    tbody {
+      tr:nth-child(even) {
+        background-color: $background-color; // Cor de fundo das linhas pares usando variável
+      }
+
+      td {
+        border: 1px solid $border-color; // Borda das células de corpo usando variável
+        @include padding($padding-medium); // Padding das células de corpo usando variável
+        text-align: left;
       }
     }
   }
-  
+}

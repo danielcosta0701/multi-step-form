@@ -29,7 +29,7 @@ export const Input = (props: InputProps) => {
             <input
                 type={type}
                 placeholder={placeholder}
-                defaultValue={defaultValue} // Usar defaultValue para definir o valor inicial
+                defaultValue={defaultValue || ""} // Usar defaultValue para definir o valor inicial
                 {...register}
                 className={error ? 'error' : ''} // Adicionar a classe de erro se necessário
             />

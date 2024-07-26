@@ -1,5 +1,4 @@
 import { UseFormRegisterReturn, FieldError } from 'react-hook-form';
-import InputMask from 'react-input-mask';
 import './Input.scss';
 
 interface InputProps {
@@ -20,7 +19,6 @@ export const Input = (props: InputProps) => {
         register,
         defaultValue = '',
         error,
-        mask = '',
     } = props;
 
     return (
@@ -28,8 +26,7 @@ export const Input = (props: InputProps) => {
             <label>
                 {label}
             </label>
-            <InputMask
-                mask={mask}
+            <input
                 type={type}
                 placeholder={placeholder}
                 defaultValue={defaultValue || ''}

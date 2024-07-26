@@ -59,7 +59,6 @@ export default function Step2(props: StepProps) {
 
   }, [loanAmount, numberOfInstallments]);
 
-  // Formata o valor total como moeda brasileira
   const formatCurrency = (value: number) => {
     return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   };

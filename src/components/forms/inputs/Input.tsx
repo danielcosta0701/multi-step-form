@@ -7,6 +7,7 @@ interface InputProps {
     type?: string;
     placeholder: string;
     register: UseFormRegisterReturn;
+    defaultValue?: string | null; // Adicionar defaultValue como opcional
     error?: FieldError; // Adicionar a propriedade de erro
 }
 
@@ -16,6 +17,7 @@ export const Input = (props: InputProps) => {
         type = "text", 
         placeholder,
         register,
+        defaultValue = '', // Definir um valor padrão para defaultValue
         error,
     } = props;
 
@@ -27,8 +29,9 @@ export const Input = (props: InputProps) => {
             <input
                 type={type}
                 placeholder={placeholder}
+                defaultValue={defaultValue} // Usar defaultValue para definir o valor inicial
                 {...register}
-                className={error && 'error'} // Adicionar a classe de erro ou valida
+                className={error ? 'error' : ''} // Adicionar a classe de erro se necessário
             />
             {error && <p className="error-message">{error.message}</p>} {/* Exibir a mensagem de erro */}
         </div>

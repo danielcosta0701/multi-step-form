@@ -68,12 +68,13 @@ export default function Step2(props: StepProps) {
             label="Número de parcelas"
             options={INSTALLMENTS_MOCK}
             placeholder="Escolha o número de parcelas"
+            defaultValue={formData.number_of_installments}
             register={register("number_of_installments", { required: "Número de parcelas é obrigatório." })}
             error={errors.number_of_installments} // Passar erro para o Select
           />
           <Range
             label="Valor"
-            defaultValue={0}
+            defaultValue={formData.loan_amount || 0}
             min={0}
             max={100}
             step={10}

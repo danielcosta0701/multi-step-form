@@ -12,6 +12,7 @@ interface SelectProps {
     label: string;
     value?: number | string;
     placeholder: string;
+    defaultValue: string | number | null;
     options: Option[];
     register: UseFormRegisterReturn;
     error?: FieldError; // Adicionar a propriedade de erro
@@ -23,6 +24,7 @@ export const Select = (props: SelectProps) => {
         value,
         placeholder, 
         options,
+        defaultValue,
         register,
         error
     } = props;
@@ -34,7 +36,7 @@ export const Select = (props: SelectProps) => {
             </label>
             <select
                 value={value}
-                defaultValue=""
+                defaultValue={defaultValue || ''}
                 {...register}
                 className={error ? 'error' : ''}
             >

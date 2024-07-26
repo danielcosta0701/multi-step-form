@@ -55,11 +55,16 @@ function App() {
 
         <Container>
           <LeftContainer>
-            left side
+            <div className="left-container-content">
+              <h1>Grupo Digital</h1>
+              <h2>Crédito Consignado</h2>
+              <p>Tire o fardo com o crédito consignado</p>
+            </div>
           </LeftContainer>
 
           <RightContainer>
             <Box variant={boxVariant}>
+              <h3>Simular crédito</h3>
               <Stepper 
                 currentStep={currentStep} 
                 steps={steps.map(step => ({

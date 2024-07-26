@@ -26,9 +26,7 @@ export default function Step1(props: StepProps) {
         handleSubmit, 
         reset, 
         formState: { errors, isValid }
-    } = useForm<FormStep1>({
-        mode: 'onChange' // Para que o isValid seja atualizado em tempo real
-    });
+    } = useForm<FormStep1>();
 
     const onSubmit: SubmitHandler<FormStep1> = (data) => {
         const obj = {
@@ -53,6 +51,7 @@ export default function Step1(props: StepProps) {
                         label="Nome"
                         type="text"
                         placeholder="Digite seu nome"
+                        defaultValue={formData.name}
                         register={register("name", { required: "Nome é obrigatório", minLength: { value: 3, message: "Nome deve ter pelo menos 3 caracteres" }, maxLength: { value: 50, message: "Nome deve ter no máximo 50 caracteres" } })}
                         error={errors.name}
                     />
@@ -60,6 +59,7 @@ export default function Step1(props: StepProps) {
                         label="Sobrenome"
                         type="text"
                         placeholder="Digite seu sobrenome"
+                        defaultValue={formData.surname}
                         register={register("surname", { required: "Sobrenome é obrigatório", minLength: { value: 3, message: "Sobrenome deve ter pelo menos 3 caracteres" }, maxLength: { value: 50, message: "Sobrenome deve ter no máximo 50 caracteres" } })}
                         error={errors.surname}
                     />
@@ -67,6 +67,7 @@ export default function Step1(props: StepProps) {
                         label="Celular"
                         type="text"
                         placeholder="Digite seu celular"
+                        defaultValue={formData.phone}
                         register={register("phone", { required: "Celular é obrigatório" })}
                         error={errors.phone}
                     />
@@ -74,6 +75,7 @@ export default function Step1(props: StepProps) {
                         label="E-mail"
                         type="email"
                         placeholder="Digite seu e-mail"
+                        defaultValue={formData.email || ''}
                         register={register("email", { required: "E-mail é obrigatório" })}
                         error={errors.email}
                     />
@@ -81,6 +83,7 @@ export default function Step1(props: StepProps) {
                         label="Gênero"
                         options={GENDERS_MOCK}
                         placeholder="Escolha seu gênero"
+                        defaultValue={formData.gender}
                         register={register("gender", { required: "Gênero é obrigatório" })}
                         error={errors.gender}
                     />
@@ -88,6 +91,7 @@ export default function Step1(props: StepProps) {
                         label="CPF"
                         type="text"
                         placeholder="Digite seu CPF"
+                        defaultValue={formData.document_cpf}
                         register={register("document_cpf", { required: "CPF é obrigatório" })}
                         error={errors.document_cpf}
                     />

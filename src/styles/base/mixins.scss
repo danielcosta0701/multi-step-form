@@ -1,7 +1,3 @@
-// src/styles/_mixins.scss
-
-// ** Mixins de Flexbox **
-
 @mixin flex-center($direction: row, $justify: center, $align: center) {
     display: flex;
     flex-direction: $direction;
@@ -13,8 +9,6 @@
     @include flex-center(column, $justify, $align);
   }
   
-  // ** Mixins de Grid **
-  
   @mixin grid($columns: 12, $gap: $spacing-unit) {
     display: grid;
     grid-template-columns: repeat($columns, 1fr);
@@ -25,8 +19,6 @@
     grid-column: $column-start / $column-end;
     grid-row: $row-start / $row-end;
   }
-  
-  // ** Mixins de Tipografia **
   
   @mixin font($size: $body-font-size, $weight: normal, $line-height: 1.5) {
     font-size: $size;
@@ -40,25 +32,19 @@
     margin: 0;
   }
   
-  // ** Mixins de Box Shadow **
   
   @mixin box-shadow($shadow: $box-shadow-medium) {
     box-shadow: $shadow;
   }
   
-  // ** Mixins de Transição **
-  
   @mixin transition($properties: all, $duration: $transition-speed, $timing: ease) {
     transition: $properties $duration $timing;
   }
-  
-  // ** Mixins de Bordas Arredondadas **
   
   @mixin border-radius($radius: $border-radius-medium) {
     border-radius: $radius;
   }
   
-  // ** Mixins de Padding e Margin **
   
   @mixin padding($top: $padding-medium, $right: $padding-medium, $bottom: $padding-medium, $left: $padding-medium) {
     padding: $top $right $bottom $left;
@@ -67,8 +53,6 @@
   @mixin margin($top: $margin-medium, $right: $margin-medium, $bottom: $margin-medium, $left: $margin-medium) {
     margin: $top $right $bottom $left;
   }
-  
-  // ** Mixins de Hover e Foco **
   
   @mixin hover($styles) {
     &:hover {
@@ -81,8 +65,6 @@
       @content;
     }
   }
-  
-  // ** Mixins para Estado Desabilitado **
   
   @mixin disabled {
     opacity: $opacity-disabled;

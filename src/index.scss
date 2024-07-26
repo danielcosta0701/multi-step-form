@@ -1,39 +1,31 @@
-// Importando variáveis e mixins
 @import 'styles/base/variables.scss';
 @import 'styles/base/mixins.scss';
 
-// Estilos Globais
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
+body, html {
     width: 100%;
     min-height: 100vh;
-    background-color: $background-color;
+}
+
+body { 
+    background-color: $primary-color;
     font-family: $font-primary;
     color: $text-color;
 }
 
-// Estilo para o elemento main
-main {
-    width: 100%;
-    min-height: 100vh;
-    @include flex-center(column); // Usando o mixin flex-center para centralizar o conteúdo
-    background-color: $background-color;
-}
-
-// Estilização global para links
 a {
-    color: $link-color; // Cor padrão para links
-    text-decoration: none; // Remove o sublinhado dos links
-    @include transition(color); // Usando o mixin de transição para suavizar a cor do link
+    color: $link-color;
+    text-decoration: none;
+    @include transition(color);
 
     &:hover,
     &:focus {
-        color: $link-hover-color; // Cor do link ao passar o mouse ou focar
-        text-decoration: underline; // Adiciona sublinhado ao passar o mouse
+        color: $link-hover-color;
+        text-decoration: underline;
     }
 }

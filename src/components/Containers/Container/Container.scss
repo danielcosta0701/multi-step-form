@@ -1,25 +1,23 @@
-// Importando variáveis e mixins
 @import '../../../styles/base/variables.scss';
 @import '../../../styles/base/mixins.scss';
 
-// Estilos para o Container
 .container {
   width: 100%;
   display: flex;
   flex-direction: row;
-  gap: $spacing-unit; // Espaçamento entre os itens usando variável
-  background-color: $background-color; // Cor de fundo usando variável
-  flex-grow: 1; // Permite que o container cresça para preencher o espaço disponível
+  gap: $spacing-unit; 
+  background-color: $primary-color;
+  flex-grow: 1;
 
   @media (max-width: 768px) {
-    flex-direction: column; // Muda a direção para coluna em telas pequenas
+    flex-direction: column;
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
-    flex-direction: row; // Mantenha a direção como linha para tamanhos intermediários
+    flex-direction: row;
   }
 
   @media (min-width: 1025px) {
-    flex-direction: row; // Mantém a direção como linha para telas grandes
+    flex-direction: row;
   }
 }

@@ -1,13 +1,11 @@
-// Importando variáveis e mixins
 @import '../../styles/base/variables.scss';
 @import '../../styles/base/mixins.scss';
 
-// Estilo base para o Menu
 .menu {
     ul {
-        list-style: none; // Remove marcadores da lista
-        @include flex-center(row); // Usando mixin flex-center para layout horizontal
-        gap: $spacing-unit; // Espaçamento entre os itens
+        list-style: none;
+        @include flex-center(row);
+        gap: $spacing-unit;
         padding: 0;
         margin: 0;
 
@@ -15,26 +13,25 @@
             margin: 0;
 
             a {
-                color: $link-color; // Cor padrão dos links
-                text-decoration: none; // Remove sublinhado
-                @include transition(color); // Suaviza a transição de cor
+                color: $link-color;
+                text-decoration: none;
+                @include transition(color); 
 
                 &:hover,
                 &:focus {
-                    color: $link-hover-color; // Cor ao passar o mouse ou focar
-                    text-decoration: underline; // Adiciona sublinhado ao passar o mouse
+                    color: $link-hover-color;
+                    text-decoration: underline;
                 }
             }
         }
     }
 }
 
-// Responsividade básica
 @media (max-width: 768px) {
     .menu {
         ul {
-            @include flex-center(column); // Usando mixin flex-center para layout vertical
-            gap: calc($spacing-unit / 2); // Espaçamento reduzido para layout vertical
+            @include flex-center(column);
+            gap: calc($spacing-unit / 2);
         }
     }
 }

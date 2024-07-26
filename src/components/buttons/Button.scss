@@ -1,47 +1,44 @@
-// Importando variáveis e mixins
 @import '../../styles/base/variables.scss';
 @import '../../styles/base/mixins.scss';
 
-// Estilos para o Button
 .button {
-  font-size: $base-font-size; // Tamanho da fonte usando variável
-  border-radius: $border-radius-small; // Bordas arredondadas usando variável
-  padding: $padding-small $padding-medium; // Padding usando variáveis
+  font-size: $base-font-size;
+  border-radius: $border-radius-small;
+  padding: $padding-small $padding-medium;
   cursor: pointer;
   border: 1px solid transparent;
   transition: background-color $transition-speed, color $transition-speed, border-color $transition-speed;
 
   &:disabled {
     cursor: not-allowed;
-    opacity: $opacity-disabled; // Opacidade para elementos desativados usando variável
+    opacity: $opacity-disabled;
   }
 
   &:hover:not(:disabled) {
-    opacity: 0.9; // Ajuste da opacidade no hover
+    opacity: 0.9;
   }
 
   &.filled {
-    background-color: $primary-color; // Cor de fundo usando variável
-    color: $text-color; // Cor do texto usando variável
-    border: 1px solid $primary-color; // Cor da borda usando variável
+    background-color: $primary-color;
+    color: $text-color;
+    border: 1px solid $primary-color;
     
     &:hover:not(:disabled) {
-      background-color: darken($primary-color, 10%); // Cor de fundo no hover usando variável
+      background-color: darken($primary-color, 10%);
     }
   }
 
   &.outlined {
     background-color: transparent;
-    color: $primary-color; // Cor do texto usando variável
-    border: 1px solid $primary-color; // Cor da borda usando variável
+    color: $primary-color;
+    border: 1px solid $primary-color;
 
     &:hover:not(:disabled) {
-      background-color: rgba($primary-color, 0.1); // Cor de fundo no hover com transparência
+      background-color: rgba($primary-color, 0.1);
     }
   }
 }
 
-// Estilos para o texto do botão
 .button-text {
-  font-size: inherit; // Herda o tamanho da fonte do botão
+  font-size: inherit;
 }

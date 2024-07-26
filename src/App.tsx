@@ -49,36 +49,36 @@ function App() {
   const boxVariant = currentStep === steps.length - 1 ? "filled" : "outlined";
 
   return (
-    <>
-        <Header logo={<img src="" alt="Logo" />} />
+    <div className="app-container">
+      <Header logo={<img src="" alt="Logo" />} />
 
-        <Container>
-          <LeftContainer>
-            <></>
-            {/* <div className="left-container-content">
-              <h1>Grupo Digital</h1>
-              <h2>Crédito Consignado</h2>
-              <p>Tire o fardo com o crédito consignado</p>
-            </div> */}
-          </LeftContainer>
+      <Container>
+        <LeftContainer>
+          <></>
+          {/* <div className="left-container-content">
+            <h1>Grupo Digital</h1>
+            <h2>Crédito Consignado</h2>
+            <p>Tire o fardo com o crédito consignado</p>
+          </div> */}
+        </LeftContainer>
 
-          <RightContainer>
-            <Box variant={boxVariant}>
-              <h3>Simular crédito</h3>
-              <Stepper 
-                currentStep={currentStep} 
-                steps={steps.map(step => ({
-                  title: step.title,
-                  description: step.description
-                }))} 
-              />
-              {steps[currentStep].content}
-            </Box>
-          </RightContainer>
-        </Container>
+        <RightContainer>
+          <Box variant={boxVariant}>
+            <h3>Simular crédito</h3>
+            <Stepper 
+              currentStep={currentStep} 
+              steps={steps.map(step => ({
+                title: step.title,
+                description: step.description
+              }))} 
+            />
+            {steps[currentStep].content}
+          </Box>
+        </RightContainer>
+      </Container>
 
-        <Footer text="© 2024 My Website. All rights reserved." />
-    </>
+      <Footer text="© 2024 My Website. All rights reserved." />
+    </div>
   );
 }
 

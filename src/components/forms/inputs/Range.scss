@@ -1,106 +1,99 @@
-// Importando variáveis e mixins
 @import '../../../styles/base/variables.scss';
 @import '../../../styles/base/mixins.scss';
 
-/* Estilos gerais para o container do input range */
 .range-container {
-  @include flex-center(column); // Layout flexível com direção de coluna e alinhamento central
-  @include margin($margin-medium, 0); // Margem superior e inferior usando variável
+  @include flex-center(column);
+  @include margin($margin-medium, 0);
 
   label {
-    @include font($body-font-size); // Tamanho da fonte usando variável
-    margin-bottom: $margin-small; // Margem inferior usando variável
-    color: $text-color; // Cor do texto usando variável
+    @include font($body-font-size);
+    margin-bottom: $margin-small;
+    color: $text-color;
   }
 
   input[type="range"] {
-    -webkit-appearance: none; /* Remove o estilo padrão do navegador */
-    width: 100%; /* Ocupa a largura total do container */
+    -webkit-appearance: none;
+    width: 100%;
     background-color: transparent;
     margin: 0;
     padding: 0;
 
-    /* Estilização da trilha */
     &::-webkit-slider-runnable-track {
       width: 100%;
       height: 8px;
-      background: $border-color; // Cor de fundo da trilha usando variável
-      @include border-radius($border-radius-small); // Borda arredondada usando variável
+      background: $border-color;
+      @include border-radius($border-radius-small);
     }
 
-    /* Estilização do polegar */
     &::-webkit-slider-thumb {
-      -webkit-appearance: none; /* Remove o estilo padrão do navegador */
+      -webkit-appearance: none;
       width: 24px;
       height: 24px;
-      background: $primary-color; // Cor de fundo do polegar usando variável
+      background: $primary-color;
       cursor: pointer;
-      @include border-radius(50%); // Borda arredondada usando variável
+      @include border-radius(50%);
       position: relative;
       z-index: 1;
     }
 
-    /* Estilização para Firefox */
     &::-moz-range-track {
       width: 100%;
       height: 8px;
-      background: $border-color; // Cor de fundo da trilha usando variável
-      @include border-radius($border-radius-small); // Borda arredondada usando variável
+      background: $border-color;
+      @include border-radius($border-radius-small);
     }
 
     &::-moz-range-thumb {
       width: 24px;
       height: 24px;
-      background: $primary-color; // Cor de fundo do polegar usando variável
+      background: $primary-color;
       cursor: pointer;
-      @include border-radius(50%); // Borda arredondada usando variável
+      @include border-radius(50%);
     }
 
-    /* Estilização para IE */
     &::-ms-track {
       width: 100%;
       height: 8px;
       background: transparent;
       border-color: transparent;
       color: transparent;
-      @include border-radius($border-radius-small); // Borda arredondada usando variável
+      @include border-radius($border-radius-small);
     }
 
     &::-ms-fill-lower {
-      background: $border-color; // Cor de fundo da trilha inferior usando variável
-      @include border-radius($border-radius-small); // Borda arredondada usando variável
+      background: $border-color;
+      @include border-radius($border-radius-small);
     }
 
     &::-ms-fill-upper {
-      background: $border-color; // Cor de fundo da trilha superior usando variável
-      @include border-radius($border-radius-small); // Borda arredondada usando variável
+      background: $border-color;
+      @include border-radius($border-radius-small);
     }
 
     &::-ms-thumb {
       width: 24px;
       height: 24px;
-      background: $primary-color; // Cor de fundo do polegar usando variável
+      background: $primary-color;
       cursor: pointer;
-      @include border-radius(50%); // Borda arredondada usando variável
+      @include border-radius(50%);
     }
   }
 
   output {
-    @include font($body-font-size); // Tamanho da fonte usando variável
-    margin-top: $margin-small; // Margem superior usando variável
-    color: $text-color; // Cor do texto usando variável
+    @include font($body-font-size);
+    margin-top: $margin-small;
+    color: $text-color;
   }
 
   &.error {
     input[type="range"] {
-      border-color: $error-color; // Cor da borda em caso de erro usando variável
+      border-color: $error-color;
     }
   }
 }
 
-/* Estilos para a mensagem de erro */
 .error-message {
-  color: $error-color; // Cor da mensagem de erro usando variável
-  @include font(0.875rem); // Tamanho da fonte usando variável
-  @include margin($margin-small, 0); // Margem superior usando variável
+  color: $error-color;
+  @include font(0.875rem);
+  @include margin($margin-small, 0);
 }

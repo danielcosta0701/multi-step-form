@@ -1,10 +1,10 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import { Input } from '../../components/forms/inputs/Input';
-import { Select } from '../../components/forms/inputs/Select';
+import { Input } from "../../components/forms/inputs/Input/Input";
+import { Select } from "../../components/forms/inputs/Select/Select";
 import { useMultiStepForm } from '../../contexts/MultiStepFormContext';
 import { StepProps } from '../../types/StepTypes';
 import { GeneralFormData } from '../../types/MultiStepFormTypes';
-import { Button } from '../../components/buttons/Button';
+import { Button } from '../../components/Button/Button';
 import { GENDERS_MOCK } from '../../mocks/mocks';
 import { showSuccessToast } from "../../utils/ToastSucess";
 
@@ -41,7 +41,7 @@ export default function Step1(props: StepProps) {
         };
 
         setFormData((prevFormData: GeneralFormData) => ({ ...prevFormData, ...obj }));
-        showSuccessToast("Passo 2 desbloqueado");
+        showSuccessToast("Dados pessoais enviados");
         nextStep();
     };
 

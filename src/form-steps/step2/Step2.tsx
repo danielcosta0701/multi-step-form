@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { Select } from '../../components/forms/inputs/Select';
 import { useMultiStepForm } from '../../contexts/MultiStepFormContext';
 import { StepProps } from '../../types/StepTypes';
 import { GeneralFormData } from '../../types/MultiStepFormTypes';
-import { Button } from '../../components/buttons/Button';
-import { Range } from '../../components/forms/inputs/Range';
+import { Button } from '../../components/Button/Button';
+import { Range } from '../../components/forms/inputs/Range/Range';
+import { Select } from '../../components/forms/inputs/Select/Select';
 import { INSTALLMENTS_MOCK } from '../../mocks/mocks';
 import { showInstallmentsTableModal } from '../../utils/InstallmentsTableModal';
 import { showSuccessToast } from '../../utils/ToastSucess';
@@ -42,7 +42,7 @@ export default function Step2(props: StepProps) {
     };
 
     setFormData((prevFormData: GeneralFormData) => ({ ...prevFormData, ...obj }));
-    showSuccessToast('Operação realizada com sucesso!');
+    showSuccessToast('Valores enviados');
     nextStep();
   };
 

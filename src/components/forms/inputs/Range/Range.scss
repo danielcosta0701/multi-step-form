@@ -1,5 +1,5 @@
-@import '../../../styles/base/variables.scss';
-@import '../../../styles/base/mixins.scss';
+@import '../../../../styles/base/variables.scss';
+@import '../../../../styles/base/mixins.scss';
 
 .range-container {
   @include flex-center(column);

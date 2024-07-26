@@ -4,7 +4,7 @@ import { Select } from '../../components/forms/inputs/Select';
 import { useMultiStepForm } from '../../contexts/MultiStepFormContext';
 import { StepProps } from '../../types/StepTypes';
 import { GeneralFormData } from '../../types/MultiStepFormTypes';
-import { Button } from '../../components/Buttons/Button';
+import { Button } from '../../components/buttons/Button';
 import { Range } from '../../components/forms/inputs/Range';
 import { INSTALLMENTS_MOCK } from '../../mocks/mocks';
 import { showInstallmentsTableModal } from '../../utils/InstallmentsTableModal';

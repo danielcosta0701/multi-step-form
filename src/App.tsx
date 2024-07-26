@@ -50,16 +50,16 @@ function App() {
 
   return (
     <>
-      <main>
         <Header logo={<img src="" alt="Logo" />} />
 
         <Container>
           <LeftContainer>
-            <div className="left-container-content">
+            <></>
+            {/* <div className="left-container-content">
               <h1>Grupo Digital</h1>
               <h2>Crédito Consignado</h2>
               <p>Tire o fardo com o crédito consignado</p>
-            </div>
+            </div> */}
           </LeftContainer>
 
           <RightContainer>
@@ -78,7 +78,6 @@ function App() {
         </Container>
 
         <Footer text="© 2024 My Website. All rights reserved." />
-      </main>
     </>
   );
 }

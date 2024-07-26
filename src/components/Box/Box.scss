@@ -1,18 +1,22 @@
+// Importando variáveis
+@import '../../styles/base/variables.scss';
+@import '../../styles/base/mixins.scss';
+
+// Estilos para a Box
 .box {
-    width: 100%;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #fff; // cor de fundo padrão
-    border: 1px solid #ddd; // borda padrão
-  
-    &.filled {
-      background-color: #f8f9fa; // cor de fundo para o estado preenchido
-      border: 1px solid #ccc; // cor de borda para o estado preenchido
-    }
-  
-    &.outlined {
-      background-color: #fff; // cor de fundo para o estado contornado
-      border: 1px solid #007bff; // cor de borda para o estado contornado
-    }
+  width: 100%;
+  padding: $padding-medium; // Padding usando variável
+  border-radius: $border-radius-medium; // Bordas arredondadas usando variável
+  background-color: $background-color; // Cor de fundo padrão usando variável
+  border: 1px solid $border-color; // Borda padrão usando variável
+
+  &.filled {
+    background-color: $muted-text-color; // Cor de fundo para o estado preenchido usando variável
+    border: 1px solid lighten($border-color, 10%); // Cor de borda para o estado preenchido usando variável
   }
-  
+
+  &.outlined {
+    background-color: $background-color; // Cor de fundo para o estado contornado usando variável
+    border: 1px solid $primary-color; // Cor de borda para o estado contornado usando variável
+  }
+}

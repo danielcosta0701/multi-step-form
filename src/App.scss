@@ -1,40 +1,35 @@
-// Definindo variáveis para cores e fontes
-$background-color: purple;
-$main-background-color: green;
-$text-color: #fff;
-$link-color: #007bff;
-$link-hover-color: #0056b3;
-$font-family: Arial, sans-serif;
+// Importando variáveis e mixins
+@import 'styles/base/variables.scss';
+@import 'styles/base/mixins.scss';
 
+// Estilos Globais
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-// Estilo básico do body
 body {
     width: 100%;
     min-height: 100vh;
     background-color: $background-color;
-    font-family: $font-family; // Define a fonte padrão
-    color: $text-color; // Define a cor do texto padrão
+    font-family: $font-primary;
+    color: $text-color;
 }
 
 // Estilo para o elemento main
 main {
     width: 100%;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: $main-background-color;
+    @include flex-center(column); // Usando o mixin flex-center para centralizar o conteúdo
+    background-color: $background-color;
 }
 
 // Estilização global para links
 a {
     color: $link-color; // Cor padrão para links
     text-decoration: none; // Remove o sublinhado dos links
-    transition: color 0.3s ease; // Suaviza a transição de cor
+    @include transition(color); // Usando o mixin de transição para suavizar a cor do link
 
     &:hover,
     &:focus {

@@ -2,7 +2,6 @@
 @import '../../../../styles/base/mixins.scss';
 
 .range-container {
-  @include flex-center(column);
   @include margin($margin-medium, 0);
 
   label {

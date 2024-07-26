@@ -86,6 +86,10 @@ export default function Step2(props: StepProps) {
           />
         </div>
 
+        <div className="total-value">
+          Total: R$ {totalValue.toFixed(2)}
+        </div>
+
         <div className="button-container">
           <Button onClick={() => reset()} variant="outlined" className="button">
             <Button.Text>Limpar</Button.Text>
@@ -102,10 +106,6 @@ export default function Step2(props: StepProps) {
           <Button onClick={showInstallmentsTableModal} variant="outlined" className="button">
             <Button.Text>Apresentar Tabela de Juros</Button.Text>
           </Button>
-        </div>
-
-        <div className="total-value">
-          Total: R$ {totalValue.toFixed(2)}
         </div>
       </form>
     </div>

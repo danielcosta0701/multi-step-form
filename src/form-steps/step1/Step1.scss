@@ -2,6 +2,8 @@
 @import '../../styles/base/mixins.scss';
 
 .step1-container {
+  display: flex;
+  flex-direction: column;
   @include padding($padding-large);
 
   form {
@@ -10,20 +12,24 @@
     gap: $spacing-unit;
 
     .input-group {
+      width: 100%;
       display: flex;
+      justify-content: space-between;
       flex-wrap: wrap;
       gap: $spacing-unit;
-      width: 100%;
+    }
+
+    .input {
+      flex: 1;
     }
 
     .button-container {
-      display: flex;
-      flex-direction: row;
+      width: 100%;
       gap: $spacing-unit;
       margin-top: $spacing-unit;
+      @include flex-center();
 
       .button {
-        flex: 1;
         min-width: 120px;
       }
     }

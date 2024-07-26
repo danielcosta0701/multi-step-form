@@ -7,6 +7,9 @@ $muted-text-color: #777;
 $error-color: #BF4040;
 $success-color: #4BE8A0;
 
+$link-color: $primary-color;
+$link-hover-color: $secondary-color;
+
 $font-primary: 'Arial, sans-serif';
 $font-secondary: 'Georgia, serif';
 $base-font-size: 16px;
@@ -31,9 +34,6 @@ $border-color: #ddd;
 $border-radius-small: 4px;
 $border-radius-medium: 8px;
 $border-radius-large: 16px;
-
-$link-color: $primary-color;
-$link-hover-color: $secondary-color;
 
 $transition-speed: 0.3s;
 $opacity-disabled: 0.6;

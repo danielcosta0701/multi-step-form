@@ -34,7 +34,7 @@
     .menu {
         ul {
             @include flex-center(column); // Usando mixin flex-center para layout vertical
-            gap: $spacing-unit / 2; // Espaçamento reduzido para layout vertical
+            gap: calc($spacing-unit / 2); // Espaçamento reduzido para layout vertical
         }
     }
 }

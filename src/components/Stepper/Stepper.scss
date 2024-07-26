@@ -10,7 +10,7 @@
   // Estilos para os títulos dos passos
   .stepper-titles {
     @include flex-center(row); // Alinhamento horizontal dos títulos dos passos
-    gap: $spacing-unit / 2;
+    gap: calc($spacing-unit / 2);
   }
 
   // Estilos para um passo individual
@@ -30,13 +30,13 @@
       color: $link-color;
       @include flex-center();
       font-weight: bold;
-      margin-right: $spacing-unit / 2;
+      margin-right: calc($spacing-unit / 2);
     }
 
     // Detalhes do passo
     .step-details {
       @include flex-center(column); // Alinhamento vertical dos detalhes do passo
-      gap: $spacing-unit / 2;
+      gap: calc($spacing-unit / 2);
 
       h3 {
         margin: 0;
@@ -44,7 +44,7 @@
       }
 
       p {
-        margin: $spacing-unit / 2 0 0;
+        margin: calc($spacing-unit / 2) 0 0;
         @include font(14px, normal); // Usando mixin para fonte dos parágrafos
       }
     }

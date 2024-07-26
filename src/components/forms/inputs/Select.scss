@@ -1,7 +1,6 @@
 // Importando variáveis e mixins
-@import '../../styles/base/variables.scss';
-@import '../../styles/base/mixins.scss';
-
+@import '../../../styles/base/variables.scss';
+@import '../../../styles/base/mixins.scss';
 /* Estilos gerais para o container do select */
 .select-container {
   @include flex-center(column); // Layout flexível com direção de coluna
@@ -27,8 +26,7 @@
     
     &:focus {
       border-color: $primary-color; // Cor da borda ao focar usando variável
-      outline: none;
-      @include box-shadow($box-shadow-small, $primary-color, 0.2); // Sombra usando variável
+      outline: none; // Sombra usando variável
     }
 
     &:disabled {
@@ -38,7 +36,6 @@
 
     &.error {
       border-color: $error-color; // Cor da borda em caso de erro usando variável
-      @include box-shadow($box-shadow-small, $error-color, 0.2); // Sombra em caso de erro usando variável
     }
 
     &::-ms-expand {

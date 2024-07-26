@@ -36,7 +36,7 @@
 
     .header-menu {
       @include flex-center(column); // Alinhamento vertical dos itens do menu
-      gap: $spacing-unit / 2; // Espaçamento reduzido para layout vertical
+      gap: calc($spacing-unit / 2); // Espaçamento reduzido para layout vertical
     }
   }
 }

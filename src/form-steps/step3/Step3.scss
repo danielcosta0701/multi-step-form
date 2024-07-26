@@ -44,13 +44,13 @@
     color: $link-color; // Cor do número usando variável
     @include flex-center(); // Centraliza o conteúdo do número
     font-weight: bold;
-    margin-right: $spacing-unit / 2; // Margem direita usando variável
+    margin-right: calc($spacing-unit / 2); // Margem direita usando variável
   }
 
   // Detalhes do passo
   .step-details {
     @include flex-center(column); // Alinhamento vertical dos detalhes do passo
-    gap: $spacing-unit / 2; // Espaçamento entre detalhes usando variável
+    gap: calc($spacing-unit / 2); // Espaçamento entre detalhes usando variável
 
     h3 {
       margin: 0;
@@ -58,7 +58,7 @@
     }
 
     p {
-      margin: $spacing-unit / 2 0 0;
+      margin: calc($spacing-unit / 2) 0 0;
       @include font($body-font-size, normal); // Tamanho e peso da fonte usando mixin
     }
   }

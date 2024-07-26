@@ -55,11 +55,12 @@ function App() {
 
         <Container>
           <LeftContainer>
-            <div className="left-container-content">
+            <></>
+            {/* <div className="left-container-content">
               <h1>Grupo Digital</h1>
               <h2>Crédito Consignado</h2>
               <p>Tire o fardo com o crédito consignado</p>
-            </div>
+            </div> */}
           </LeftContainer>
 
           <RightContainer>

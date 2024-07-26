@@ -21,11 +21,11 @@ $body-font-size: 1rem; // Default font size for body text
 
 // ** Espaçamentos (Paddings e Margens) **
 $spacing-unit: 1rem; // Base unit for spacing
-$padding-small: $spacing-unit / 2;
+$padding-small: calc($spacing-unit / 2);
 $padding-medium: $spacing-unit;
 $padding-large: $spacing-unit * 2;
 
-$margin-small: $spacing-unit / 2;
+$margin-small: calc($spacing-unit / 2);
 $margin-medium: $spacing-unit;
 $margin-large: $spacing-unit * 2;
 

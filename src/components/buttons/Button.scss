@@ -36,7 +36,7 @@
     border: 1px solid $primary-color; // Cor da borda usando variável
 
     &:hover:not(:disabled) {
-      background-color: rgba($primary-color-rgb, 0.1); // Cor de fundo no hover com transparência
+      background-color: rgba($primary-color, 0.1); // Cor de fundo no hover com transparência
     }
   }
 }

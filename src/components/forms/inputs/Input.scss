@@ -1,10 +1,10 @@
 // Importando variáveis e mixins
-@import '../../styles/base/variables.scss';
-@import '../styles/base/mixins.scss';
+@import '../../../styles/base/variables.scss';
+@import '../../../styles/base/mixins.scss';
 
 /* Estilos gerais para o container do input */
 .input-container {
-  @include flex-column; // Layout flexível com direção de coluna
+  @include flex-column-center; // Layout flexível com direção de coluna
   @include margin($margin-medium, 0); // Margem superior e inferior usando variável
 
   label {
@@ -31,7 +31,7 @@
     &:focus {
       border-color: $primary-color; // Cor da borda ao focar usando variável
       outline: none;
-      box-shadow: 0 0 0 3px rgba($primary-color-rgb, 0.2); // Sombra ao focar
+      box-shadow: 0 0 0 3px rgba($primary-color, 0.2); // Sombra ao focar
     }
 
     &::placeholder {

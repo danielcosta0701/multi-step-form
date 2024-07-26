@@ -71,7 +71,7 @@ function App() {
         </Container.Right>
       </Container>
 
-      <Footer text="© 2024 My Website. All rights reserved." />
+      <Footer text="Desenvolvido por Daniel Costa" />
     </div>
   );
 }

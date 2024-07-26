@@ -7,7 +7,6 @@ import { Button } from '../../components/Button/Button';
 import { Range } from '../../components/forms/inputs/Range/Range';
 import { Select } from '../../components/forms/inputs/Select/Select';
 import { INSTALLMENTS_MOCK } from '../../mocks/mocks';
-import { showInstallmentsTableModal } from '../../utils/InstallmentsTableModal';
 import { showSuccessToast } from '../../utils/ToastSucess';
 import './Step2.scss';
 
@@ -28,7 +27,6 @@ export default function Step2(props: StepProps) {
     register, 
     handleSubmit, 
     watch, 
-    reset,
     formState: { errors, isValid }, 
   } = useForm<FormStep2>({ mode: 'onChange' }); 
 
@@ -78,7 +76,7 @@ export default function Step2(props: StepProps) {
             label="Valor"
             defaultValue={formData.loan_amount || 0}
             min={0}
-            max={100}
+            max={20000}
             step={10}
             register={register("loan_amount", { required: "Valor é obrigatório." })}
             error={errors.loan_amount}
@@ -87,24 +85,16 @@ export default function Step2(props: StepProps) {
         </div>
 
         <div className="total-value">
-          Total: R$ {totalValue.toFixed(2)}
+          <span>Total: R$ {totalValue.toFixed(2)}</span>
         </div>
 
         <div className="button-container">
-          <Button onClick={() => reset()} variant="outlined" className="button">
-            <Button.Text>Limpar</Button.Text>
-          </Button>
-
           <Button onClick={prevStep} variant="outlined" className="button">
             <Button.Text>Anterior</Button.Text>
           </Button>
 
           <Button type="submit" disabled={!isValid} className="button">
             <Button.Text>Próximo</Button.Text>
-          </Button>
-
-          <Button onClick={showInstallmentsTableModal} variant="outlined" className="button">
-            <Button.Text>Apresentar Tabela de Juros</Button.Text>
           </Button>
         </div>
       </form>

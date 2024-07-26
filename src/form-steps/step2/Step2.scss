@@ -2,6 +2,7 @@
 @import '../../styles/base/mixins.scss';
 
 .step2-container {
+  width: 100%;
   @include padding($padding-large);
   
   form {
@@ -31,10 +32,10 @@
     }
 
     .total-value {
-      margin-top: $spacing-unit;
       font-size: $subheading-font-size;
       font-weight: bold;
       color: $primary-color;
+      @include flex-center();
     }
   }
 }

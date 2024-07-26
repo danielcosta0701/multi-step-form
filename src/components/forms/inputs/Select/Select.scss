@@ -48,6 +48,6 @@
 
 .error-message {
   color: $error-color;
-  @include font(0.875rem); 
-  @include margin($margin-small, 0);
+  @include font(0.875rem);
+  margin-top: calc($spacing-unit / 2);
 }

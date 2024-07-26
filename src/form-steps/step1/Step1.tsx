@@ -123,6 +123,7 @@ export default function Step1(props: StepProps) {
                     <div className="input">
                         <Input 
                             label="CPF"
+                            mask="999.999.999-99"
                             type="text"
                             placeholder="Digite seu CPF"
                             defaultValue={formData.document_cpf}

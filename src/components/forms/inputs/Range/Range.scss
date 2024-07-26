@@ -29,13 +29,14 @@
 
     &::-webkit-slider-thumb {
       -webkit-appearance: none;
-      width: 24px;
-      height: 24px;
+      width: 16px;
+      height: 16px;
       background: $primary-color;
       cursor: pointer;
       @include border-radius(50%);
       position: relative;
-      z-index: 1;
+      top: 4px;
+      margin-top: -8px;
     }
 
     &::-moz-range-track {
@@ -46,11 +47,12 @@
     }
 
     &::-moz-range-thumb {
-      width: 24px;
-      height: 24px;
+      width: 16px;
+      height: 16px;
       background: $primary-color;
       cursor: pointer;
       @include border-radius(50%);
+      margin-top: -8px; // Ajusta o deslocamento vertical
     }
 
     &::-ms-track {
@@ -73,11 +75,12 @@
     }
 
     &::-ms-thumb {
-      width: 24px;
-      height: 24px;
+      width: 16px;
+      height: 16px;
       background: $primary-color;
       cursor: pointer;
       @include border-radius(50%);
+      margin-top: 4px;
     }
   }
 
@@ -97,5 +100,5 @@
 .error-message {
   color: $error-color;
   @include font(0.875rem);
-  @include margin($margin-small, 0);
+  margin-top: calc($spacing-unit / 2);
 }

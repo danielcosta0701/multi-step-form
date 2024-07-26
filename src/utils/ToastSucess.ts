@@ -6,8 +6,7 @@ const MySwal = withReactContent(Swal);
 export const showSuccessToast = (message: string) => {
   MySwal.fire({
     icon: 'success',
-    title: 'Sucesso!',
-    text: message,
+    title: message,
     toast: true,
     position: 'top-end',
     showConfirmButton: false,

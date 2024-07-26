@@ -4,6 +4,7 @@
 .stepper {
   @include flex-center(column);
   gap: $spacing-unit;
+  
 
   .stepper-titles {
     @include flex-center(row);
@@ -12,13 +13,14 @@
   }
 
   .step {
-    @include flex-center(column);
+    @include flex-center(column, start);
     background-color: $border-color;
     @include padding($padding-small);
     @include border-radius($border-radius-small);
     transition: background-color $transition-speed;
     flex: 1;
     text-align: center;
+    min-height: 140px;
 
     .step-number {
       width: 30px;
@@ -28,13 +30,13 @@
       color: $link-color;
       @include flex-center();
       font-weight: bold;
-      margin-bottom: $spacing-unit / 2; 
+      margin-bottom: calc($spacing-unit / 2); 
     }
 
     .step-details {
       @include flex-center(column);
       gap: calc($spacing-unit / 2);
-
+      
       h3 {
         margin: 0;
         @include font($body-font-size, bold);

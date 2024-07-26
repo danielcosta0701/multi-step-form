@@ -14,7 +14,7 @@ const Footer = (props: FooterProps) => {
     return (
         <footer className={`footer ${className}`}>
             <div className="footer-content">
-                <p>{text}</p>
+                <a href="http://github.com/danielcosta0701">{text}</a>
             </div>
         </footer>
     );

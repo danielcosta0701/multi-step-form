@@ -1,0 +1,41 @@
+// Variáveis para cores e fontes
+$link-color: #007bff;
+$link-hover-color: #0056b3;
+$text-color: #333;
+
+// Estilo base para o Menu
+.menu {
+    ul {
+        list-style: none; // Remove marcadores da lista
+        display: flex;
+        gap: 1rem; // Espaçamento entre os itens
+        padding: 0;
+        margin: 0;
+
+        li {
+            margin: 0;
+
+            a {
+                color: $link-color; // Cor padrão dos links
+                text-decoration: none; // Remove sublinhado
+                transition: color 0.3s ease; // Suaviza a transição de cor
+
+                &:hover,
+                &:focus {
+                    color: $link-hover-color; // Cor ao passar o mouse ou focar
+                    text-decoration: underline; // Adiciona sublinhado ao passar o mouse
+                }
+            }
+        }
+    }
+}
+
+// Responsividade básica
+@media (max-width: 768px) {
+    .menu {
+        ul {
+            flex-direction: column; // Alinha itens do menu verticalmente
+            gap: 0.5rem;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+// Estilos para o RightContainer
+.right-container {
+    background-color: red;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        flex: none;
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+        flex: 1;
+    }
+
+    @media (min-width: 1025px) {
+        flex: 1 1 66%;
+    }
+}

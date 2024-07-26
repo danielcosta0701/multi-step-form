@@ -1,10 +1,13 @@
-import { UseFormRegisterReturn } from 'react-hook-form';
+import React from 'react';
+import { UseFormRegisterReturn, FieldError } from 'react-hook-form';
+import './Input.scss'; // Importar o arquivo de estilos
 
 interface InputProps {
-    label: string,
-    type?: string,
-    placeholder: string,
-    register: UseFormRegisterReturn,
+    label: string;
+    type?: string;
+    placeholder: string;
+    register: UseFormRegisterReturn;
+    error?: FieldError; // Adicionar a propriedade de erro
 }
 
 export const Input = (props: InputProps) => {
@@ -13,10 +16,11 @@ export const Input = (props: InputProps) => {
         type = "text", 
         placeholder,
         register,
+        error,
     } = props;
 
     return (
-        <div>
+        <div className={`input-container ${error ? 'error' : ''}`}>
             <label>
                 {label}
             </label>
@@ -25,6 +29,7 @@ export const Input = (props: InputProps) => {
                 placeholder={placeholder}
                 {...register}
             />
+            {error && <p className="error-message">{error.message}</p>} {/* Exibir a mensagem de erro */}
         </div>
     );
 }

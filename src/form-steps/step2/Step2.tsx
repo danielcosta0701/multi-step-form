@@ -4,7 +4,7 @@ import { Select } from '../../components/forms/inputs/Select';
 import { useMultiStepForm } from '../../contexts/MultiStepFormContext';
 import { StepProps } from '../../types/StepTypes';
 import { GeneralFormData } from '../../types/MultiStepFormTypes';
-import { Button } from '../../components/buttons/Button';
+import { Button } from '../../components/Buttons/Button';
 import { Range } from '../../components/forms/inputs/Range';
 import { INSTALLMENTS_MOCK } from '../../mocks/mocks';
 
@@ -25,7 +25,8 @@ export default function Step2(props: StepProps) {
     register, 
     handleSubmit, 
     watch, 
-    reset 
+    reset,
+    formState: { errors } // Obter erros do formulário
   } = useForm<FormStep2>();
 
   const loanAmount = parseFloat(watch('loan_amount'));
@@ -64,7 +65,8 @@ export default function Step2(props: StepProps) {
             label="Número de parcelas"
             options={INSTALLMENTS_MOCK}
             placeholder="Escolha o número de parcelas"
-            register={{ ...register("number_of_installments", { required: true }) }}
+            register={register("number_of_installments", { required: "Número de parcelas é obrigatório." })}
+            error={errors.number_of_installments} // Passar erro para o Select
           />
           <Range
             label="Valor"
@@ -72,7 +74,8 @@ export default function Step2(props: StepProps) {
             min={0}
             max={100}
             step={10}
-            register={{ ...register("loan_amount", { required: true }) }}
+            register={register("loan_amount", { required: "Valor é obrigatório." })}
+            error={errors.loan_amount} // Passar erro para o Range
           />
 
           <Button onClick={() => reset()}>

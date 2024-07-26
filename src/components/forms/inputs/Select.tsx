@@ -1,17 +1,20 @@
-import { UseFormRegisterReturn } from 'react-hook-form';
+import React from 'react';
+import { UseFormRegisterReturn, FieldError } from 'react-hook-form';
+import './Select.scss'; // Importar o arquivo de estilos
 
 interface Option {
-    id: number,
+    id: number;
     value: number | string;
     label: string;
 }
 
 interface SelectProps {
-    label: string,
-    value?: number | string,
-    placeholder: string,
-    options: Option[],
-    register: UseFormRegisterReturn,
+    label: string;
+    value?: number | string;
+    placeholder: string;
+    options: Option[];
+    register: UseFormRegisterReturn;
+    error?: FieldError; // Adicionar a propriedade de erro
 }
 
 export const Select = (props: SelectProps) => {
@@ -21,10 +24,11 @@ export const Select = (props: SelectProps) => {
         placeholder, 
         options,
         register,
+        error,
     } = props;
 
     return (
-        <div>
+        <div className="select-container">
             <label>
                 {label}
             </label>
@@ -43,6 +47,7 @@ export const Select = (props: SelectProps) => {
                     </option>
                 ))}
             </select>
+            {error && <p className="error-message">{error.message}</p>} {/* Exibir a mensagem de erro */}
         </div>
     );
 }

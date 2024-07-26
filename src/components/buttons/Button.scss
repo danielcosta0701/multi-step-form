@@ -1,0 +1,41 @@
+.button {
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+
+    &:hover:not(:disabled) {
+        opacity: 0.9;
+    }
+
+    &.filled {
+        background-color: #007bff;
+        color: white;
+        border: 1px solid #007bff;
+        
+        &:hover:not(:disabled) {
+            background-color: #0056b3;
+        }
+    }
+
+    &.outlined {
+        background-color: transparent;
+        color: #007bff;
+        border: 1px solid #007bff;
+
+        &:hover:not(:disabled) {
+            background-color: rgba(0, 123, 255, 0.1);
+        }
+    }
+}
+
+.button-text {
+    font-size: inherit;
+}

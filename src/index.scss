@@ -1,0 +1,31 @@
+@import 'styles/base/variables.scss';
+@import 'styles/base/mixins.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    min-height: 100vh;
+}
+
+body { 
+    background-color: $primary-color;
+    font-family: $font-primary;
+    color: $text-color;
+}
+
+a {
+    color: $link-color;
+    text-decoration: none;
+    @include transition(color);
+
+    &:hover,
+    &:focus {
+        color: $link-hover-color;
+        text-decoration: underline;
+    }
+}

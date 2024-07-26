@@ -18,7 +18,7 @@ interface FormStep1 {
 }
 
 export default function Step1(props: StepProps) {
-    const { prevStep, nextStep } = props;
+    const { nextStep } = props;
     const { formData, setFormData } = useMultiStepForm();
 
     const { 

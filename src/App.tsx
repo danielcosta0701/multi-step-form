@@ -3,7 +3,6 @@ import { useState } from 'react';
 import Step1 from './form-steps/step1/Step1';
 import Step2 from './form-steps/step2/Step2';
 import Step3 from './form-steps/step3/Step3';
-import { useMultiStepForm } from './contexts/MultiStepFormContext';
 import { Box } from './components/Box/Box';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
@@ -14,7 +13,6 @@ import { Stepper } from './components/Stepper/Stepper';
 
 function App() {
   const [currentStep, setCurrentStep] = useState(2);
-  const { formData, setFormData } = useMultiStepForm();
 
   const prevStep = () => {
     if (currentStep > 0) {
@@ -49,36 +47,36 @@ function App() {
   const boxVariant = currentStep === steps.length - 1 ? "filled" : "outlined";
 
   return (
-    <>
-        <Header logo={<img src="" alt="Logo" />} />
+    <div className="app-container">
+      <Header logo={<img src="" alt="Logo" />} />
 
-        <Container>
-          <LeftContainer>
-            <></>
-            {/* <div className="left-container-content">
-              <h1>Grupo Digital</h1>
-              <h2>Crédito Consignado</h2>
-              <p>Tire o fardo com o crédito consignado</p>
-            </div> */}
-          </LeftContainer>
+      <Container>
+        <LeftContainer>
+          <></>
+          {/* <div className="left-container-content">
+            <h1>Grupo Digital</h1>
+            <h2>Crédito Consignado</h2>
+            <p>Tire o fardo com o crédito consignado</p>
+          </div> */}
+        </LeftContainer>
 
-          <RightContainer>
-            <Box variant={boxVariant}>
-              <h3>Simular crédito</h3>
-              <Stepper 
-                currentStep={currentStep} 
-                steps={steps.map(step => ({
-                  title: step.title,
-                  description: step.description
-                }))} 
-              />
-              {steps[currentStep].content}
-            </Box>
-          </RightContainer>
-        </Container>
+        <RightContainer>
+          <Box variant={boxVariant}>
+            <h3>Simular crédito</h3>
+            <Stepper 
+              currentStep={currentStep} 
+              steps={steps.map(step => ({
+                title: step.title,
+                description: step.description
+              }))} 
+            />
+            {steps[currentStep].content}
+          </Box>
+        </RightContainer>
+      </Container>
 
-        <Footer text="© 2024 My Website. All rights reserved." />
-    </>
+      <Footer text="© 2024 My Website. All rights reserved." />
+    </div>
   );
 }
 

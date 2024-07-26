@@ -1,4 +1,3 @@
-import React from 'react';
 import './Stepper.scss';
 
 interface Step {
@@ -11,7 +10,13 @@ interface StepperProps {
   steps: Step[];
 }
 
-const Stepper: React.FC<StepperProps> = ({ currentStep, steps }) => {
+const Stepper = (props: StepperProps) => {
+
+  const {
+    currentStep,
+    steps
+  } = props;
+
   return (
     <div className="stepper">
       <div className="stepper-titles">

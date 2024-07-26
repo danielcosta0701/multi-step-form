@@ -1,4 +1,3 @@
-import React from 'react';
 import './Box.scss';
 
 interface BoxProps {
@@ -6,10 +5,17 @@ interface BoxProps {
   variant?: 'filled' | 'outlined';
 }
 
-export const Box: React.FC<BoxProps> = ({ children, variant = 'outlined' }) => {
+const Box = (props: BoxProps) => {
+  const {
+    children, 
+    variant = "outlined"
+  } = props;
+
   return (
     <div className={`box ${variant}`}>
       {children}
     </div>
   );
 };
+
+export { Box }

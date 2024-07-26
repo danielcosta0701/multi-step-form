@@ -1,4 +1,3 @@
-import React from 'react';
 import './RightContainer.scss';
 
 interface RightContainerProps {
@@ -6,7 +5,12 @@ interface RightContainerProps {
     className?: string;
 }
 
-const RightContainer = ({ children, className = "" }: RightContainerProps) => {
+const RightContainer = (props: RightContainerProps) => {
+    const {
+        children,
+        className
+    } = props;
+
     return (
         <div className={`right-container ${className}`}>
             {children}

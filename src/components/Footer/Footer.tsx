@@ -1,12 +1,16 @@
-import React from 'react';
 import './Footer.scss';
 
 interface FooterProps {
-    text: string; // Texto principal do rodapé
-    className?: string; // Classe CSS adicional
+    text: string;
+    className?: string;
 }
 
-const Footer = ({ text, className = "" }: FooterProps) => {
+const Footer = (props: FooterProps) => {
+    const {
+        text,
+        className
+    } = props;
+
     return (
         <footer className={`footer ${className}`}>
             <div className="footer-content">

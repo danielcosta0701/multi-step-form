@@ -1,19 +1,17 @@
-// Importando variáveis e mixins
 @import '../../styles/base/variables.scss';
 @import '../../styles/base/mixins.scss';
 
-// Estilo base para o contêiner da tabela
 .table-container {
-  @include margin($margin-medium); // Margem usando variável
-  @include padding($padding-medium); // Padding usando variável
-  border: 1px solid $border-color; // Borda usando variável
-  @include border-radius($border-radius-medium); // Bordas arredondadas usando variável
-  @include box-shadow($box-shadow-medium); // Sombra usando variável
+  @include margin($margin-medium);
+  @include padding($padding-medium);
+  border: 1px solid $border-color;
+  @include border-radius($border-radius-medium);
+  @include box-shadow($box-shadow-medium);
 
   h2 {
-    margin-bottom: $spacing-unit; // Margem inferior usando variável
-    @include font($heading-font-size, bold); // Tamanho e peso da fonte usando mixin
-    color: $text-color; // Cor do texto usando variável
+    margin-bottom: $spacing-unit;
+    @include font($heading-font-size, bold);
+    color: $text-color;
   }
 
   table {
@@ -21,24 +19,24 @@
     border-collapse: collapse;
 
     thead {
-      background-color: $background-color; // Cor de fundo usando variável
+      background-color: $background-color;
 
       th {
-        border: 1px solid $border-color; // Borda das células de cabeçalho usando variável
-        @include padding($padding-medium); // Padding das células de cabeçalho usando variável
+        border: 1px solid $border-color;
+        @include padding($padding-medium);
         text-align: left;
-        color: $muted-text-color; // Cor do texto das células de cabeçalho usando variável
+        color: $muted-text-color;
       }
     }
 
     tbody {
       tr:nth-child(even) {
-        background-color: $background-color; // Cor de fundo das linhas pares usando variável
+        background-color: $background-color;
       }
 
       td {
-        border: 1px solid $border-color; // Borda das células de corpo usando variável
-        @include padding($padding-medium); // Padding das células de corpo usando variável
+        border: 1px solid $border-color;
+        @include padding($padding-medium);
         text-align: left;
       }
     }

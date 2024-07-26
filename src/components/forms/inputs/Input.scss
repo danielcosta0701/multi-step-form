@@ -1,61 +1,54 @@
-// Importando variáveis e mixins
 @import '../../../styles/base/variables.scss';
 @import '../../../styles/base/mixins.scss';
 
-/* Estilos gerais para o container do input */
 .input-container {
-  @include flex-column-center; // Layout flexível com direção de coluna
-  @include margin($margin-medium, 0); // Margem superior e inferior usando variável
+  @include flex-column-center;
+  @include margin($margin-medium, 0);
 
   label {
-    @include font($body-font-size); // Tamanho da fonte usando variável
-    margin-bottom: $margin-small; // Margem inferior usando variável
-    color: $text-color; // Cor do texto usando variável
+    @include font($body-font-size);
+    margin-bottom: $margin-small;
+    color: $text-color;
   }
 
   input[type="text"],
-  input[type="email"],
-  input[type="password"],
-  input[type="number"],
-  input[type="search"],
-  input[type="tel"],
-  input[type="url"] {
-    width: 100%; // Ocupa a largura total do container
-    padding: $padding-small $padding-medium; // Padding usando variáveis
-    border: 1px solid $border-color; // Cor da borda usando variável
-    @include border-radius($border-radius-small); // Borda arredondada usando variável
-    @include font($body-font-size); // Tamanho da fonte usando variável
-    color: $text-color; // Cor do texto usando variável
-    transition: border-color $transition-speed, box-shadow $transition-speed; // Transição usando variável
+  input[type="email"] {
+    width: 100%;
+    padding: $padding-small $padding-medium;
+    border: 1px solid $border-color;
+    @include border-radius($border-radius-small);
+    @include font($body-font-size);
+    color: $text-color;
+    transition: border-color $transition-speed, box-shadow $transition-speed; 
 
     &:focus {
-      border-color: $primary-color; // Cor da borda ao focar usando variável
+      border-color: $primary-color;
       outline: none;
-      box-shadow: 0 0 0 3px rgba($primary-color, 0.2); // Sombra ao focar
+      box-shadow: 0 0 0 3px rgba($primary-color, 0.2);
     }
 
     &::placeholder {
-      color: $muted-text-color; // Cor do placeholder usando variável
+      color: $muted-text-color;
     }
 
     &:disabled {
-      background-color: $background-color; // Cor de fundo quando desativado usando variável
+      background-color: $background-color;
       cursor: not-allowed;
     }
 
     &.error {
-      border-color: $error-color; // Cor da borda em caso de erro usando variável
+      border-color: $error-color;
     }
 
     &.valid {
-      border-color: $success-color; // Cor da borda em caso de sucesso usando variável
+      border-color: $success-color;
     }
   }
 
   .error-message {
-    color: $error-color; // Cor da mensagem de erro usando variável
+    color: $error-color;
     border: 2px solid $error-color;
-    @include font(0.875rem); // Tamanho da fonte usando variável
-    @include margin($margin-small, 0); // Margem superior usando variável
+    @include font(0.875rem);
+    @include margin($margin-small, 0);
   }
 }

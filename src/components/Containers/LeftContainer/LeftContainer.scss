@@ -1,26 +1,24 @@
-// Importando variáveis e mixins
 @import '../../../styles/base/variables.scss';
 @import '../../../styles/base/mixins.scss';
 
-// Estilos para o LeftContainer
 .left-container {
-  background-color: $primary-color; // Cor de fundo usando variável
-  padding: $padding-medium; // Padding usando variável
+  background-color: $primary-color; 
+  padding: $padding-medium;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 1; // Flexível por padrão
+  flex: 1;
 
   @media (max-width: 768px) {
-    width: 100%; // Largura total para dispositivos móveis
-    flex: none; // Remove o comportamento flexível
+    width: 100%;
+    flex: none;
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
-    flex: 1; // Flexível em tamanhos de tela intermediários
+    flex: 1; 
   }
 
   @media (min-width: 1025px) {
-    flex: 1 1 33%; // Flexível com base na proporção de 33% para telas maiores
+    flex: 1 1 33%;
   }
 }

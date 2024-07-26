@@ -3,7 +3,9 @@ import withReactContent from 'sweetalert2-react-content';
 import InstallmentsTable from '../components/InstallmentsTable/InstallmentsTable';
 
 export const showInstallmentsTableModal = () => {
-    const MySwal = withReactContent(Swal).fire({
+  const MySwal = withReactContent(Swal);
+
+  MySwal.fire({
     title: 'Tabela de Juros por Parcelas',
     html: <InstallmentsTable />,
     showCloseButton: true,

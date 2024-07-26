@@ -1,28 +1,25 @@
-// Importando variáveis e mixins
 @import '../../styles/base/variables.scss';
 @import '../../styles/base/mixins.scss';
 
-// Estilo base para o Footer
 .footer {
   background-color: $background-color;
   color: $primary-color;
   padding: $padding-small;
-  text-align: center; // Centraliza o texto
-  font-family: $font-primary; // Fonte definida
-  border-top: 1px solid lighten($background-color, 10%); // Borda superior mais clara
-
+  text-align: center;
+  font-family: $font-primary;
+  border-top: 1px solid lighten($background-color, 10%);
   .footer-content {
-    margin: 0; // Remove margens
+    margin: 0;
   }
 
   p {
-    margin: 0; // Remove margens
+    margin: 0;
   }
 }
 
 // Responsividade básica
 @media (max-width: 768px) {
   .footer {
-    padding: $padding-small; // Ajusta o padding para dispositivos móveis usando variável
+    padding: $padding-small;
   }
 }

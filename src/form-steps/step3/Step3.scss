@@ -1,65 +1,57 @@
-// Importando variáveis e mixins
 @import '../../styles/base/variables.scss';
 @import '../../styles/base/mixins.scss';
 
-// Estilo base para o Stepper
 .stepper {
-  @include flex-center(column); // Usando mixin para alinhamento vertical
-  gap: $spacing-unit * 2; // Espaçamento entre passos usando variável
-  margin: $spacing-unit * 2 0; // Margem superior e inferior usando variável
+  @include flex-center(column);
+  gap: $spacing-unit * 2;
+  margin: $spacing-unit * 2 0;
 }
 
-// Estilo para os títulos dos passos
 .stepper-titles {
-  @include flex-center(column); // Alinhamento vertical dos títulos dos passos
-  gap: $spacing-unit; // Espaçamento entre os títulos dos passos
+  @include flex-center(column);
+  gap: $spacing-unit;
 }
 
-// Estilo para um passo individual
 .step {
-  @include flex-center(row); // Alinhamento horizontal dos itens dentro do passo
-  background-color: $border-color; // Cor de fundo usando variável
-  @include padding($padding-small); // Padding usando variável
-  @include border-radius($border-radius-small); // Bordas arredondadas usando variável
-  transition: background-color $transition-speed; // Transição de cor usando variável
+  @include flex-center(row);
+  background-color: $border-color;
+  @include padding($padding-small);
+  @include border-radius($border-radius-small);
+  transition: background-color $transition-speed;
   cursor: default;
 
-  // Estilo ativo para o passo
   &.active {
-    background-color: $link-color; // Cor de fundo ativa usando variável
-    color: $text-color; // Cor do texto ativa usando variável
+    background-color: $link-color;
+    color: $text-color;
   }
 
-  // Estilo para passo clicável
   &.clickable {
     cursor: pointer;
   }
   
-  // Estilo para o número do passo
   .step-number {
     width: 30px;
     height: 30px;
-    @include border-radius(50%); // Bordas arredondadas em forma de círculo usando mixin
+    @include border-radius(50%);
     background-color: #fff;
-    color: $link-color; // Cor do número usando variável
-    @include flex-center(); // Centraliza o conteúdo do número
+    color: $link-color;
+    @include flex-center();
     font-weight: bold;
-    margin-right: calc($spacing-unit / 2); // Margem direita usando variável
+    margin-right: calc($spacing-unit / 2);
   }
 
-  // Detalhes do passo
   .step-details {
-    @include flex-center(column); // Alinhamento vertical dos detalhes do passo
-    gap: calc($spacing-unit / 2); // Espaçamento entre detalhes usando variável
+    @include flex-center(column);
+    gap: calc($spacing-unit / 2);
 
     h3 {
       margin: 0;
-      @include font($subheading-font-size, bold); // Tamanho e peso da fonte usando mixin
+      @include font($subheading-font-size, bold);
     }
 
     p {
       margin: calc($spacing-unit / 2) 0 0;
-      @include font($body-font-size, normal); // Tamanho e peso da fonte usando mixin
+      @include font($body-font-size, normal);
     }
   }
 }

@@ -1,4 +1,3 @@
-import React from 'react';
 import './Container.scss';
 
 interface ContainerProps {
@@ -6,7 +5,12 @@ interface ContainerProps {
     className?: string;
 }
 
-const Container = ({ children, className = "" }: ContainerProps) => {
+const Container = (props: ContainerProps) => {
+    const {
+        children,
+        className,
+    } = props;
+
     return (
         <div className={`container ${className}`}>
             {children}

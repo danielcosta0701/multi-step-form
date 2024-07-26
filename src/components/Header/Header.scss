@@ -1,42 +1,39 @@
-// Importando variáveis e mixins
 @import '../../styles/base/variables.scss';
 @import '../../styles/base/mixins.scss';
 
-// Estilo base para o Header
 .header {
-  @include flex-center(row, space-between); // Usando mixin para layout flexível com espaçamento
-  background-color: $background-color; // Cor de fundo do cabeçalho usando variável
-  color: $text-color; // Cor do texto usando variável
-  @include padding($padding-medium); // Padding usando variável
-  border-bottom: 1px solid $border-color; // Borda inferior usando variável
-  @include box-shadow($box-shadow-small); // Sombra usando variável
-  font-family: $font-primary; // Fonte usando variável
+  @include flex-center(row, space-between);
+  background-color: $background-color;
+  color: $text-color;
+  @include padding($padding-medium);
+  border-bottom: 1px solid $border-color;
+  @include box-shadow($box-shadow-small);
+  font-family: $font-primary;
 
   .header-logo {
-    @include flex-center(row); // Alinhamento horizontal do logo
-    font-size: $heading-font-size; // Tamanho da fonte do logo usando variável
+    @include flex-center(row);
+    font-size: $heading-font-size;
   }
 
   .header-menu {
-    @include flex-center(row); // Alinhamento horizontal do menu
-    gap: $spacing-unit; // Espaçamento entre itens do menu usando variável
+    @include flex-center(row);
+    gap: $spacing-unit;
   }
 }
 
-// Responsividade básica
 @media (max-width: 768px) {
   .header {
-    @include flex-center(column); // Alinhamento vertical do cabeçalho em dispositivos móveis
-    @include padding($padding-small); // Padding reduzido para dispositivos móveis
-    text-align: center; // Centraliza o texto
+    @include flex-center(column);
+    @include padding($padding-small);
+    text-align: center;
 
     .header-logo {
-      @include margin(0, $spacing-unit); // Margem inferior usando variável
+      @include margin(0, $spacing-unit);
     }
 
     .header-menu {
-      @include flex-center(column); // Alinhamento vertical dos itens do menu
-      gap: calc($spacing-unit / 2); // Espaçamento reduzido para layout vertical
+      @include flex-center(column); 
+      gap: calc($spacing-unit / 2);
     }
   }
 }

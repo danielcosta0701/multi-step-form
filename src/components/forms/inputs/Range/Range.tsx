@@ -11,6 +11,7 @@ interface RangeProps {
     defaultValue?: number;
     register: UseFormRegisterReturn;
     error?: FieldError;
+    className?: string;
 }
 
 export const Range = (props: RangeProps) => {
@@ -23,6 +24,7 @@ export const Range = (props: RangeProps) => {
         register,
         defaultValue,
         error,
+        className
     } = props;
 
     const [currentValue, setCurrentValue] = useState(value ?? defaultValue ?? min);
@@ -33,7 +35,7 @@ export const Range = (props: RangeProps) => {
     };
 
     return (
-        <div className="range-container">
+        <div className={`range-container ${className}`}>
             <label>
                 {label}
             </label>

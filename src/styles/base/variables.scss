@@ -1,15 +1,17 @@
-$primary-color: #3498db;
-$secondary-color: #2ecc71;
-$accent-color: #e74c3c;
-$background-color: #f5f5f5;
-$text-color: #333;
+$primary-color: hsl(160, 100%, 31%);
+$secondary-color: #191919;
+$accent-color: #F6F6F6;
+$background-color: #F5F5F5;
+$text-color: #666;
 $muted-text-color: #777;
-$error-color: #e74c3c;
-$success-color: #2ecc71;
-$warning-color: #f39c12;
+$error-color: #BF4040;
+$success-color: #4BE8A0;
 
-$font-primary: 'Helvetica, Arial, sans-serif';
-$font-secondary: 'Georgia, serif';
+$link-color: $primary-color;
+$link-hover-color: $secondary-color;
+
+$font-primary: 'Roboto', sans-serif;
+$font-secondary: 'Arial', sans-serif;
 $base-font-size: 16px;
 $heading-font-size: 2rem;
 $subheading-font-size: 1.5rem;
@@ -32,9 +34,6 @@ $border-color: #ddd;
 $border-radius-small: 4px;
 $border-radius-medium: 8px;
 $border-radius-large: 16px;
-
-$link-color: $primary-color;
-$link-hover-color: $secondary-color;
 
 $transition-speed: 0.3s;
 $opacity-disabled: 0.6;

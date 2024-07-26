@@ -1,9 +1,8 @@
-@import '../../../styles/base/variables.scss';
-@import '../../../styles/base/mixins.scss';
+@import '../../../../styles/base/variables.scss';
+@import '../../../../styles/base/mixins.scss';
 
 .input-container {
-  @include flex-column-center;
-  @include margin($margin-medium, 0);
+  
 
   label {
     @include font($body-font-size);
@@ -47,8 +46,7 @@
 
   .error-message {
     color: $error-color;
-    border: 2px solid $error-color;
     @include font(0.875rem);
-    @include margin($margin-small, 0);
+    margin-top: calc($spacing-unit / 2);
   }
 }

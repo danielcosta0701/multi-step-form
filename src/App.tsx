@@ -6,9 +6,7 @@ import Step3 from './form-steps/step3/Step3';
 import { Box } from './components/Box/Box';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
-import { Container } from './components/Containers/Container/Container';
-import { LeftContainer } from './components/Containers/LeftContainer/LeftContainer';
-import { RightContainer } from './components/Containers/RightContainer/RightContainer';
+import { Container } from './components/Container/Container';
 import { Stepper } from './components/Stepper/Stepper';
 
 function App() {
@@ -44,24 +42,22 @@ function App() {
     }
   ];
 
-  const boxVariant = currentStep === steps.length - 1 ? "filled" : "outlined";
-
   return (
     <div className="app-container">
       <Header logo={<img src="" alt="Logo" />} />
 
       <Container>
-        <LeftContainer>
+        <Container.Left>
           <></>
           {/* <div className="left-container-content">
             <h1>Grupo Digital</h1>
             <h2>Crédito Consignado</h2>
             <p>Tire o fardo com o crédito consignado</p>
           </div> */}
-        </LeftContainer>
+        </Container.Left>
 
-        <RightContainer>
-          <Box variant={boxVariant}>
+        <Container.Right>
+          <Box>
             <h3>Simular crédito</h3>
             <Stepper 
               currentStep={currentStep} 
@@ -72,10 +68,10 @@ function App() {
             />
             {steps[currentStep].content}
           </Box>
-        </RightContainer>
+        </Container.Right>
       </Container>
 
-      <Footer text="© 2024 My Website. All rights reserved." />
+      <Footer text="Desenvolvido por Daniel Costa" />
     </div>
   );
 }

@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { Select } from '../../components/forms/inputs/Select';
 import { useMultiStepForm } from '../../contexts/MultiStepFormContext';
 import { StepProps } from '../../types/StepTypes';
 import { GeneralFormData } from '../../types/MultiStepFormTypes';
-import { Button } from '../../components/buttons/Button';
-import { Range } from '../../components/forms/inputs/Range';
+import { Button } from '../../components/Button/Button';
+import { Range } from '../../components/forms/inputs/Range/Range';
+import { Select } from '../../components/forms/inputs/Select/Select';
 import { INSTALLMENTS_MOCK } from '../../mocks/mocks';
-import { showInstallmentsTableModal } from '../../utils/InstallmentsTableModal';
 import { showSuccessToast } from '../../utils/ToastSucess';
+import './Step2.scss';
 
 interface FormStep2 {
   loan_amount: number | string | null;
@@ -27,7 +27,6 @@ export default function Step2(props: StepProps) {
     register, 
     handleSubmit, 
     watch, 
-    reset,
     formState: { errors, isValid }, 
   } = useForm<FormStep2>({ mode: 'onChange' }); 
 
@@ -42,7 +41,7 @@ export default function Step2(props: StepProps) {
     };
 
     setFormData((prevFormData: GeneralFormData) => ({ ...prevFormData, ...obj }));
-    showSuccessToast('Operação realizada com sucesso!');
+    showSuccessToast('Valores enviados');
     nextStep();
   };
 
@@ -60,10 +59,14 @@ export default function Step2(props: StepProps) {
 
   }, [loanAmount, numberOfInstallments]);
 
+  const formatCurrency = (value: number) => {
+    return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  };
+
   return (
-    <>
-      <div>
-        <form onSubmit={handleSubmit(onSubmit)}>
+    <div className="step2-container">
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="input-group">
           <Select
             label="Número de parcelas"
             options={INSTALLMENTS_MOCK}
@@ -71,36 +74,34 @@ export default function Step2(props: StepProps) {
             defaultValue={formData.number_of_installments}
             register={register("number_of_installments", { required: "Número de parcelas é obrigatório." })}
             error={errors.number_of_installments}
+            className="input"
           />
           <Range
             label="Valor"
             defaultValue={formData.loan_amount || 0}
             min={0}
-            max={100}
+            max={20000}
             step={10}
             register={register("loan_amount", { required: "Valor é obrigatório." })}
             error={errors.loan_amount}
+            className="input"
           />
-          
-          <Button onClick={() => reset()} variant="outlined">
-            <Button.Text>Limpar</Button.Text>
-          </Button>
+        </div>
 
-          <Button onClick={prevStep} variant="outlined">
+        <div className="total-value">
+          <span>Total: {formatCurrency(totalValue)}</span>
+        </div>
+
+        <div className="button-container">
+          <Button onClick={prevStep} variant="outlined" className="button">
             <Button.Text>Anterior</Button.Text>
           </Button>
 
-          <Button type="submit" disabled={!isValid}>
+          <Button type="submit" disabled={!isValid} className="button">
             <Button.Text>Próximo</Button.Text>
           </Button>
-
-          <Button onClick={showInstallmentsTableModal} variant="outlined">
-            <Button.Text>Apresentar Tabela de Juros</Button.Text>
-          </Button>
-        </form>
-
-        <div>Total: R$ {totalValue.toFixed(2)}</div>
-      </div>
-    </>
+        </div>
+      </form>
+    </div>
   );
 }

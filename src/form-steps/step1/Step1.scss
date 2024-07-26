@@ -1,0 +1,57 @@
+@import '../../styles/base/variables.scss';
+@import '../../styles/base/mixins.scss';
+
+.step1-container {
+  display: flex;
+  flex-direction: column;
+  @include padding($padding-large);
+
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-unit;
+
+    .input-group {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: $spacing-unit;
+    }
+
+    .input {
+      flex: 1;
+    }
+
+    .button-container {
+      width: 100%;
+      gap: $spacing-unit;
+      margin-top: $spacing-unit;
+      @include flex-center();
+
+      .button {
+        min-width: 120px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    form {
+      .input-group {
+        flex-direction: column;
+        
+        .input {
+          min-width: 100%;
+        }
+      }
+
+      .button-container {
+        flex-direction: column;
+
+        .button {
+          min-width: 100%;
+        }
+      }
+    }
+  }
+}

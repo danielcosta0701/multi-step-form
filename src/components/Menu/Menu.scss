@@ -5,7 +5,7 @@
     ul {
         list-style: none;
         @include flex-center(row);
-        gap: $spacing-unit;
+        gap: calc($spacing-unit * 2);
         padding: 0;
         margin: 0;
 
@@ -16,11 +16,12 @@
                 color: $link-color;
                 text-decoration: none;
                 @include transition(color); 
+                font-size: $base-font-size;
 
                 &:hover,
                 &:focus {
                     color: $link-hover-color;
-                    text-decoration: underline;
+                    text-decoration: none;
                 }
             }
         }

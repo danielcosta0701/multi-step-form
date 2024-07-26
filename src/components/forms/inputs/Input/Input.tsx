@@ -8,6 +8,7 @@ interface InputProps {
     register: UseFormRegisterReturn;
     defaultValue?: string | null;
     error?: FieldError;
+    mask?: string;
 }
 
 export const Input = (props: InputProps) => {

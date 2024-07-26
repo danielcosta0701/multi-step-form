@@ -6,6 +6,7 @@ interface ButtonProps {
     disabled?: boolean;
     onClick?: () => void;
     variant?: "filled" | "outlined";
+    className?: string;
 } 
 
 const Button = (props: ButtonProps) => {
@@ -14,7 +15,8 @@ const Button = (props: ButtonProps) => {
         type = "button",
         disabled,
         onClick,
-        variant = "filled", 
+        variant = "filled",
+        className
     } = props;
 
     return (
@@ -22,7 +24,7 @@ const Button = (props: ButtonProps) => {
             type={type}
             disabled={disabled}
             onClick={onClick}
-            className={`button ${variant}`}
+            className={`button ${variant} ${className}`}
         >
             { children }
         </button>
@@ -31,11 +33,12 @@ const Button = (props: ButtonProps) => {
 
 const ButtonText = (props: ButtonProps) => {
     const {
-        children
+        children,
+        className
     } = props;
 
     return (
-        <span className="button-text">
+        <span className={`button-text ${className}`}>
             { children }
         </span>
     );

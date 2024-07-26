@@ -1,9 +1,7 @@
-@import '../../../styles/base/variables.scss';
-@import '../../../styles/base/mixins.scss';
+@import '../../../../styles/base/variables.scss';
+@import '../../../../styles/base/mixins.scss';
 
 .select-container {
-  @include flex-center(column);
-  @include margin($margin-medium, 0);
 
   label {
     @include font($body-font-size); 
@@ -13,8 +11,8 @@
 
   select {
     width: 100%;
-    @include padding($padding-small, $padding-medium);
     border: 1px solid $border-color; 
+    padding: $padding-small $padding-medium;
     @include border-radius($border-radius-small);
     @include font($body-font-size);
     color: $text-color;
@@ -50,6 +48,6 @@
 
 .error-message {
   color: $error-color;
-  @include font(0.875rem); 
-  @include margin($margin-small, 0);
+  @include font(0.875rem);
+  margin-top: calc($spacing-unit / 2);
 }

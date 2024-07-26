@@ -15,6 +15,7 @@ interface SelectProps {
     options: Option[];
     register: UseFormRegisterReturn;
     error?: FieldError;
+    className?: string;
 }
 
 export const Select = (props: SelectProps) => {
@@ -25,11 +26,12 @@ export const Select = (props: SelectProps) => {
         options,
         defaultValue,
         register,
-        error
+        error,
+        className
     } = props;
 
     return (
-        <div className={`select-container ${error ? 'error' : ''}`}>
+        <div className={`select-container ${error ? 'error' : ''} ${className}`}>
             <label>
                 {label}
             </label>

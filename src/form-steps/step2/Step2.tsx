@@ -9,6 +9,7 @@ import { Select } from '../../components/forms/inputs/Select/Select';
 import { INSTALLMENTS_MOCK } from '../../mocks/mocks';
 import { showInstallmentsTableModal } from '../../utils/InstallmentsTableModal';
 import { showSuccessToast } from '../../utils/ToastSucess';
+import './Step2.scss';
 
 interface FormStep2 {
   loan_amount: number | string | null;
@@ -61,9 +62,9 @@ export default function Step2(props: StepProps) {
   }, [loanAmount, numberOfInstallments]);
 
   return (
-    <>
-      <div>
-        <form onSubmit={handleSubmit(onSubmit)}>
+    <div className="step2-container">
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="input-group">
           <Select
             label="Número de parcelas"
             options={INSTALLMENTS_MOCK}
@@ -71,6 +72,7 @@ export default function Step2(props: StepProps) {
             defaultValue={formData.number_of_installments}
             register={register("number_of_installments", { required: "Número de parcelas é obrigatório." })}
             error={errors.number_of_installments}
+            className="input"
           />
           <Range
             label="Valor"
@@ -80,27 +82,32 @@ export default function Step2(props: StepProps) {
             step={10}
             register={register("loan_amount", { required: "Valor é obrigatório." })}
             error={errors.loan_amount}
+            className="input"
           />
-          
-          <Button onClick={() => reset()} variant="outlined">
+        </div>
+
+        <div className="button-container">
+          <Button onClick={() => reset()} variant="outlined" className="button">
             <Button.Text>Limpar</Button.Text>
           </Button>
 
-          <Button onClick={prevStep} variant="outlined">
+          <Button onClick={prevStep} variant="outlined" className="button">
             <Button.Text>Anterior</Button.Text>
           </Button>
 
-          <Button type="submit" disabled={!isValid}>
+          <Button type="submit" disabled={!isValid} className="button">
             <Button.Text>Próximo</Button.Text>
           </Button>
 
-          <Button onClick={showInstallmentsTableModal} variant="outlined">
+          <Button onClick={showInstallmentsTableModal} variant="outlined" className="button">
             <Button.Text>Apresentar Tabela de Juros</Button.Text>
           </Button>
-        </form>
+        </div>
 
-        <div>Total: R$ {totalValue.toFixed(2)}</div>
-      </div>
-    </>
+        <div className="total-value">
+          Total: R$ {totalValue.toFixed(2)}
+        </div>
+      </form>
+    </div>
   );
 }

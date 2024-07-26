@@ -26,12 +26,10 @@ const Stepper = (props: StepperProps) => {
             className={`step ${currentStep === index ? 'active' : ''}`}
           >
             <div className="step-number">{index + 1}</div>
-            {currentStep === index && (
               <div className="step-details">
                 <h3>{step.title}</h3>
                 <p>{step.description}</p>
               </div>
-            )}
           </div>
         ))}
       </div>

@@ -59,6 +59,11 @@ export default function Step2(props: StepProps) {
 
   }, [loanAmount, numberOfInstallments]);
 
+  // Formata o valor total como moeda brasileira
+  const formatCurrency = (value: number) => {
+    return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  };
+
   return (
     <div className="step2-container">
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -85,7 +90,7 @@ export default function Step2(props: StepProps) {
         </div>
 
         <div className="total-value">
-          <span>Total: R$ {totalValue.toFixed(2)}</span>
+          <span>Total: {formatCurrency(totalValue)}</span>
         </div>
 
         <div className="button-container">

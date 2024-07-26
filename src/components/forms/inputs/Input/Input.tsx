@@ -20,7 +20,7 @@ export const Input = (props: InputProps) => {
         register,
         defaultValue = '',
         error,
-        mask,
+        mask = '',
     } = props;
 
     return (

@@ -11,9 +11,9 @@ import { showInstallmentsTableModal } from '../../utils/InstallmentsTableModal';
 import { showSuccessToast } from '../../utils/ToastSucess';
 
 interface FormStep2 {
-  loan_amount: number;
+  loan_amount: number | string | null;
   interest_rate: number | null;
-  number_of_installments: number | null;
+  number_of_installments: number | string | null;
   total_value: number | string;
 }
 
@@ -28,11 +28,11 @@ export default function Step2(props: StepProps) {
     handleSubmit, 
     watch, 
     reset,
-    formState: { errors, isValid }, // Obter erros e validade do formulário
-  } = useForm<FormStep2>({ mode: 'onChange' }); // Modo 'onChange' para validar conforme o usuário preenche
+    formState: { errors, isValid }, 
+  } = useForm<FormStep2>({ mode: 'onChange' }); 
 
-  const loanAmount = parseFloat(watch('loan_amount', '0')); // Default para '0'
-  const numberOfInstallments = parseFloat(watch('number_of_installments', '0')); // Default para '0'
+  const loanAmount = parseFloat(watch('loan_amount') as string);
+  const numberOfInstallments = parseFloat(watch('number_of_installments') as string);
 
   const onSubmit: SubmitHandler<FormStep2> = (data) => {
     const obj = {
@@ -52,10 +52,10 @@ export default function Step2(props: StepProps) {
     if (installment) {
       setInterestRate(installment.interest);
       const total = loanAmount + (loanAmount * installment.interest / 100);
-      setTotalValue(total.toFixed(2));
+      setTotalValue(total);
     } else {
       setInterestRate(0);
-      setTotalValue(loanAmount.toFixed(2));
+      setTotalValue(loanAmount);
     }
 
   }, [loanAmount, numberOfInstallments]);
@@ -70,7 +70,7 @@ export default function Step2(props: StepProps) {
             placeholder="Escolha o número de parcelas"
             defaultValue={formData.number_of_installments}
             register={register("number_of_installments", { required: "Número de parcelas é obrigatório." })}
-            error={errors.number_of_installments} // Passar erro para o Select
+            error={errors.number_of_installments}
           />
           <Range
             label="Valor"
@@ -79,7 +79,7 @@ export default function Step2(props: StepProps) {
             max={100}
             step={10}
             register={register("loan_amount", { required: "Valor é obrigatório." })}
-            error={errors.loan_amount} // Passar erro para o Range
+            error={errors.loan_amount}
           />
           
           <Button onClick={() => reset()} variant="outlined">
@@ -99,7 +99,7 @@ export default function Step2(props: StepProps) {
           </Button>
         </form>
 
-        <div>Total: R$ {totalValue}</div>
+        <div>Total: R$ {totalValue.toFixed(2)}</div>
       </div>
     </>
   );

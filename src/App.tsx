@@ -3,7 +3,6 @@ import { useState } from 'react';
 import Step1 from './form-steps/step1/Step1';
 import Step2 from './form-steps/step2/Step2';
 import Step3 from './form-steps/step3/Step3';
-import { useMultiStepForm } from './contexts/MultiStepFormContext';
 import { Box } from './components/Box/Box';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
@@ -14,7 +13,6 @@ import { Stepper } from './components/Stepper/Stepper';
 
 function App() {
   const [currentStep, setCurrentStep] = useState(2);
-  const { formData, setFormData } = useMultiStepForm();
 
   const prevStep = () => {
     if (currentStep > 0) {

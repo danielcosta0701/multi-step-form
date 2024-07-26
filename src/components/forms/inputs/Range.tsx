@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { UseFormRegisterReturn, FieldError } from 'react-hook-form';
 import './Range.scss';
 

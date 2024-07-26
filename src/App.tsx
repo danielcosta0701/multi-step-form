@@ -50,7 +50,6 @@ function App() {
 
   return (
     <>
-      <main>
         <Header logo={<img src="" alt="Logo" />} />
 
         <Container>
@@ -79,7 +78,6 @@ function App() {
         </Container>
 
         <Footer text="© 2024 My Website. All rights reserved." />
-      </main>
     </>
   );
 }

@@ -29,9 +29,9 @@ export const Input = (props: InputProps) => {
             <input
                 type={type}
                 placeholder={placeholder}
-                defaultValue={defaultValue || ""} // Usar defaultValue para definir o valor inicial
+                defaultValue={defaultValue || ''}
                 {...register}
-                className={error ? 'error' : ''} // Adicionar a classe de erro se necessário
+                className={error ? 'error' : ''}
             />
             {error && <p className="error-message">{error.message}</p>} {/* Exibir a mensagem de erro */}
         </div>

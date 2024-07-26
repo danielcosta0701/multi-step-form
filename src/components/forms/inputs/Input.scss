@@ -54,6 +54,7 @@
 
   .error-message {
     color: $error-color; // Cor da mensagem de erro usando variável
+    border: 2px solid $error-color;
     @include font(0.875rem); // Tamanho da fonte usando variável
     @include margin($margin-small, 0); // Margem superior usando variável
   }

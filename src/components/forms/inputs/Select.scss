@@ -1,57 +1,55 @@
-// Importando variáveis e mixins
 @import '../../../styles/base/variables.scss';
 @import '../../../styles/base/mixins.scss';
-/* Estilos gerais para o container do select */
+
 .select-container {
-  @include flex-center(column); // Layout flexível com direção de coluna
-  @include margin($margin-medium, 0); // Margem superior e inferior usando variável
+  @include flex-center(column);
+  @include margin($margin-medium, 0);
 
   label {
-    @include font($body-font-size); // Tamanho da fonte usando variável
-    margin-bottom: $margin-small; // Margem inferior usando variável
-    color: $text-color; // Cor do texto usando variável
+    @include font($body-font-size); 
+    margin-bottom: $margin-small;
+    color: $text-color;
   }
 
   select {
     width: 100%;
-    @include padding($padding-small, $padding-medium); // Padding usando variáveis
-    border: 1px solid $border-color; // Borda usando variável
-    @include border-radius($border-radius-small); // Bordas arredondadas usando variável
-    @include font($body-font-size); // Tamanho da fonte usando variável
-    color: $text-color; // Cor do texto usando variável
-    background-color: #fff; // Cor de fundo padrão
-    transition: border-color $transition-speed ease, box-shadow $transition-speed ease; // Transição usando variável
-    appearance: none; // Remove a estilização padrão do navegador
-    cursor: pointer; // Cursor padrão para o select
+    @include padding($padding-small, $padding-medium);
+    border: 1px solid $border-color; 
+    @include border-radius($border-radius-small);
+    @include font($body-font-size);
+    color: $text-color;
+    background-color: #fff;
+    transition: border-color $transition-speed ease, box-shadow $transition-speed ease;
+    appearance: none;
+    cursor: pointer;
     
     &:focus {
-      border-color: $primary-color; // Cor da borda ao focar usando variável
-      outline: none; // Sombra usando variável
+      border-color: $primary-color;
+      outline: none;
     }
 
     &:disabled {
-      background-color: $background-color; // Cor de fundo para o estado desabilitado usando variável
-      cursor: not-allowed; // Cursor para o estado desabilitado
+      background-color: $background-color;
+      cursor: not-allowed;
     }
 
     &.error {
-      border-color: $error-color; // Cor da borda em caso de erro usando variável
+      border-color: $error-color;
     }
 
     &::-ms-expand {
-      display: none; // Remove a seta padrão do IE
+      display: none;
     }
   }
 
   option:first-of-type {
-    color: $muted-text-color; // Cor do placeholder usando variável
-    font-style: italic; // Estilo do texto do placeholder
+    color: $muted-text-color; 
+    font-style: italic;
   }
 }
 
-/* Estilos para a mensagem de erro */
 .error-message {
-  color: $error-color; // Cor da mensagem de erro usando variável
-  @include font(0.875rem); // Tamanho da fonte usando variável
-  @include margin($margin-small, 0); // Margem superior usando variável
+  color: $error-color;
+  @include font(0.875rem); 
+  @include margin($margin-small, 0);
 }

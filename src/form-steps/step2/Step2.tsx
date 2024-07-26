@@ -7,6 +7,8 @@ import { GeneralFormData } from '../../types/MultiStepFormTypes';
 import { Button } from '../../components/Buttons/Button';
 import { Range } from '../../components/forms/inputs/Range';
 import { INSTALLMENTS_MOCK } from '../../mocks/mocks';
+import { showInstallmentsTableModal } from '../../utils/InstallmentsTableModal';
+import { showSuccessToast } from '../../utils/ToastSucess';
 
 interface FormStep2 {
   loan_amount: number;
@@ -40,6 +42,7 @@ export default function Step2(props: StepProps) {
     };
 
     setFormData((prevFormData: GeneralFormData) => ({ ...prevFormData, ...obj }));
+    showSuccessToast('Operação realizada com sucesso!');
     nextStep();
   };
 
@@ -77,7 +80,7 @@ export default function Step2(props: StepProps) {
             register={register("loan_amount", { required: "Valor é obrigatório." })}
             error={errors.loan_amount} // Passar erro para o Range
           />
-
+          
           <Button onClick={() => reset()} variant="outlined">
             <Button.Text>Limpar</Button.Text>
           </Button>
@@ -89,8 +92,12 @@ export default function Step2(props: StepProps) {
           <Button type="submit" disabled={!isValid}>
             <Button.Text>Próximo</Button.Text>
           </Button>
+
+          <Button onClick={showInstallmentsTableModal} variant="outlined">
+            <Button.Text>Apresentar Tabela de Juros</Button.Text>
+          </Button>
         </form>
-        
+
         <div>Total: R$ {totalValue}</div>
       </div>
     </>

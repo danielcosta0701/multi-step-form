@@ -6,6 +6,7 @@ import { StepProps } from '../../types/StepTypes';
 import { GeneralFormData } from '../../types/MultiStepFormTypes';
 import { Button } from '../../components/Buttons/Button';
 import { GENDERS_MOCK } from '../../mocks/mocks';
+import { showSuccessToast } from "../../utils/ToastSucess";
 
 interface FormStep1 {
     name: string;
@@ -40,6 +41,7 @@ export default function Step1(props: StepProps) {
         };
 
         setFormData((prevFormData: GeneralFormData) => ({ ...prevFormData, ...obj }));
+        showSuccessToast("Passo 2 desbloqueado");
         nextStep();
     };
 

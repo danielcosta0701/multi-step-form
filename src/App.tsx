@@ -10,7 +10,7 @@ import { Footer } from './components/Footer/Footer';
 import { Container } from './components/Containers/Container/Container';
 import { LeftContainer } from './components/Containers/LeftContainer/LeftContainer';
 import { RightContainer } from './components/Containers/RightContainer/RightContainer';
-import { Stepper } from './components/Stepper/Stepper'; // Importar o Stepper
+import { Stepper } from './components/Stepper/Stepper';
 
 function App() {
   const [currentStep, setCurrentStep] = useState(2);

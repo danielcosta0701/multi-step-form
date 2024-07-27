@@ -22,14 +22,13 @@ export default function Step3(props: StepProps) {
     return (
         <div className="step3-container">
             <div className="thank-you-message">
-                <h1>Obrigado!</h1>
                 <p>
                     Recebemos suas informações e estamos analisando sua solicitação.
                     Nossa equipe entrará em contato com você em breve para fornecer mais detalhes.
                 </p>
             </div>
             <div className="request-data">
-                <h2>Dados da Solicitação</h2>
+                <h5>Dados da Solicitação</h5>
                 <div className="data-list-container">
                     <ul className="data-list">
                         <li><strong>Nome:</strong> {name ?? 'Não informado'}</li>

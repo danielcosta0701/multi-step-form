@@ -4,7 +4,6 @@
 .step1-container {
   display: flex;
   flex-direction: column;
-  @include padding($padding-large);
 
   form {
     display: flex;
@@ -26,8 +25,8 @@
     .button-container {
       width: 100%;
       gap: $spacing-unit;
-      margin-top: $spacing-unit;
       @include flex-center();
+      margin-top: calc($spacing-unit * 2);
 
       .button {
         min-width: 120px;

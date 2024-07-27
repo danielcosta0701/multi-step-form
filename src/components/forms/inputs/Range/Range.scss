@@ -4,7 +4,6 @@
 .range-container {
   width: 100%;
   @include flex-center();
-  @include margin($margin-medium, 0);
   gap: $spacing-unit;
 
   label {

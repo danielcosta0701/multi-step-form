@@ -13,7 +13,7 @@ body, html {
     min-height: 100vh;
 }
 
-body { 
+body {
     background-color: $primary-color;
     font-family: $font-primary;
     color: $text-color;
@@ -29,4 +29,11 @@ a {
         color: $link-hover-color;
         text-decoration: none;
     }
+}
+
+h1, 
+h2, 
+h3 {
+    font-size: $heading-font-size;
+    color: white;
 }

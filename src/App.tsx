@@ -8,6 +8,10 @@ import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
 import { Container } from './components/Container/Container';
 import { Stepper } from './components/Stepper/Stepper';
+import logo from '../src/assets/logo.webp';
+import carouselImage1 from '../src/assets/background.webp';
+import carouselImage2 from '../src/assets/background.webp';
+import carouselImage3 from '../src/assets/background.webp';
 
 function App() {
   const [currentStep, setCurrentStep] = useState(2);
@@ -31,34 +35,46 @@ function App() {
       content: <Step1 prevStep={prevStep} nextStep={nextStep} />
     },
     {
-      title: "Endereço",
-      description: "Forneça o seu endereço.",
+      title: "Valores",
+      description: "Escolha o valor e a melhor opção para você.",
       content: <Step2 prevStep={prevStep} nextStep={nextStep} />
     },
     {
-      title: "Confirmação",
-      description: "Revise e confirme suas informações.",
+      title: "Sucesso",
+      description: "Sua solicitação foi enviada.",
       content: <Step3 prevStep={prevStep} nextStep={nextStep} />
     }
   ];
 
+  const carouselImages = [
+    carouselImage1,
+    carouselImage2,
+    carouselImage3
+  ];
+
+  const backgroundImage = `url(${carouselImages[currentStep]})`;
+
   return (
     <div className="app-container">
-      <Header logo={<img src="" alt="Logo" />} />
+      <Header logo={<img src={logo} alt="Logo" />} />
 
       <Container>
-        <Container.Left>
+        <Container.Left style={{ backgroundImage }}>
           <></>
-          {/* <div className="left-container-content">
-            <h1>Grupo Digital</h1>
-            <h2>Crédito Consignado</h2>
-            <p>Tire o fardo com o crédito consignado</p>
-          </div> */}
         </Container.Left>
 
         <Container.Right>
           <Box>
-            <h3>Simular crédito</h3>
+            <h3>
+              {currentStep === 0
+                ? "Solicitar crédito" 
+                : currentStep === 1 
+                ? "Escolha o valor" 
+                : currentStep === 2
+                ? "Agora falta pouco!" 
+                : ""
+              }
+            </h3>
             <Stepper 
               currentStep={currentStep} 
               steps={steps.map(step => ({

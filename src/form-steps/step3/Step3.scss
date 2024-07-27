@@ -2,60 +2,55 @@
 @import '../../styles/base/mixins.scss';
 
 .step3-container {
-  @include padding($padding-large);
   text-align: center;
   background-color: $background-color;
+  gap: $spacing-unit;
+  @include flex-center(column);
 
   .thank-you-message {
-    margin-bottom: $margin-large;
-
-    h1 {
-      font-size: $heading-font-size;
-      color: $primary-color;
-    }
+    @include flex-center(column);
+    gap: $spacing-unit;
+    margin-bottom: $spacing-unit;
 
     p {
       font-size: $body-font-size;
       color: $text-color;
-      margin: $margin-small 0;
     }
   }
 
   .request-data {
-    margin-bottom: $margin-large;
+    background-color: $primary-color;
+    border-radius: $border-radius-medium;
+    box-shadow: $box-shadow-medium;
+    padding: $padding-large;
+    gap: $spacing-unit;
+    @include flex-center(column);
 
-    h2 {
+    h5 {
       font-size: $subheading-font-size;
-      color: $primary-color;
-      margin-bottom: $margin-medium;
+      color: white;
     }
 
     .data-list-container {
-      background-color: $accent-color;
-      padding: $padding-medium;
-      border-radius: $border-radius-medium;
-      box-shadow: $box-shadow-medium;
-
       .data-list {
         list-style: none;
         margin: 0;
         padding: 0;
         display: flex;
         flex-wrap: wrap;
-        gap: $spacing-unit;
+        gap: calc($spacing-unit * 2);
 
         li {
           flex: 1 1 calc(50% - $spacing-unit);
-          margin-bottom: $spacing-unit;
           font-size: $body-font-size;
-          color: $text-color;
-          border: 1px solid $border-color;
+          color: white;
+          border-bottom: 2px solid $border-color;
           padding: $padding-small;
-          border-radius: $border-radius-small;
-          background-color: #fff;
+          gap: calc($spacing-unit / 2);
+          @include flex-center(column, end, center);
 
           strong {
-            color: $text-color;
+            color: white;
           }
         }
       }
@@ -66,6 +61,6 @@
     display: flex;
     justify-content: center;
     gap: $spacing-unit;
-    margin-top: $spacing-unit;
+    margin-top: calc($spacing-unit * 2);
   }
 }

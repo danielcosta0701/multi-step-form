@@ -2,7 +2,6 @@
 @import '../../../../styles/base/mixins.scss';
 
 .input-container {
-  
 
   label {
     @include font($body-font-size);
@@ -18,12 +17,11 @@
     @include border-radius($border-radius-small);
     @include font($body-font-size);
     color: $text-color;
-    transition: border-color $transition-speed, box-shadow $transition-speed; 
+    transition: border-color $transition-speed; 
 
     &:focus {
       border-color: $primary-color;
       outline: none;
-      box-shadow: 0 0 0 3px rgba($primary-color, 0.2);
     }
 
     &::placeholder {

@@ -7,6 +7,7 @@
   padding: $padding-small $padding-medium;
   cursor: pointer;
   border: 1px solid transparent;
+  font-weight: bold;
   transition: background-color $transition-speed, color $transition-speed, border-color $transition-speed;
 
   &:disabled {
@@ -21,20 +22,22 @@
   &.filled {
     background-color: $primary-color;
     color: white;
-    border: 1px solid $primary-color;
+    border: 2px solid $primary-color;
     
     &:hover:not(:disabled) {
       background-color: darken($primary-color, 10%);
+      border-color: darken($primary-color, 10%)
     }
   }
 
   &.outlined {
     background-color: transparent;
     color: $primary-color;
-    border: 1px solid $primary-color;
+    border: 2px solid $primary-color;
 
     &:hover:not(:disabled) {
-      background-color: rgba($primary-color, 0.1);
+      background-color: rgba($primary-color, 1);
+      color: white;
     }
   }
 }

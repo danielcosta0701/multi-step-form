@@ -13,14 +13,15 @@
             margin: 0;
 
             a {
-                color: $link-color;
+                color: white;
                 text-decoration: none;
                 @include transition(color); 
                 font-size: $base-font-size;
+                font-weight: bold;
 
                 &:hover,
                 &:focus {
-                    color: $link-hover-color;
+                    color: $primary-color;
                     text-decoration: none;
                 }
             }

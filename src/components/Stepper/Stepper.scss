@@ -20,7 +20,7 @@
     transition: background-color $transition-speed;
     flex: 1;
     text-align: center;
-    min-height: 140px;
+    
 
     .step-number {
       width: 30px;
@@ -39,6 +39,7 @@
       
       h3 {
         margin: 0;
+        color: $text-color;
         @include font($body-font-size, bold);
       }
 
@@ -51,6 +52,12 @@
     &.active {
       background-color: $primary-color;
       color: white;
+
+      .step-details {
+        h3 {
+          color: white;
+        }
+      }
     }
   }
 }

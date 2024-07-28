@@ -18,7 +18,7 @@ export const Input = (props: InputProps) => {
         type = "text", 
         placeholder,
         register,
-        defaultValue = '',
+        defaultValue = "",
         error,
         mask
     } = props;
@@ -32,18 +32,18 @@ export const Input = (props: InputProps) => {
                 <ReactInputMask
                     type={type}
                     placeholder={placeholder}
-                    defaultValue={defaultValue || ''}
+                    defaultValue={defaultValue || ""}
                     {...register}
-                    className={error ? 'error' : ''}
+                    className={error ? "error" : ""}
                     mask={mask}
                 />
             ) : (
                 <input
                     type={type}
                     placeholder={placeholder}
-                    defaultValue={defaultValue || ''}
+                    defaultValue={defaultValue || ""}
                     {...register}
-                    className={error ? 'error' : ''}
+                    className={error ? "error'" : ""}
                 />
             )}
             {error && <p className="error-message">{error.message}</p>}

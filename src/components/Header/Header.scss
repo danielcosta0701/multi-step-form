@@ -14,7 +14,7 @@
     font-size: $heading-font-size;
 
     img {
-      width: 300px;
+      width: 250px;
     }
   }
 
@@ -26,7 +26,7 @@
 
 @media (max-width: 768px) {
   .header {
-    @include flex-center(column);
+    @include flex-center();
 
     .header-menu {
       @include flex-center(column); 

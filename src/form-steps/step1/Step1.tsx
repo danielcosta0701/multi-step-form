@@ -49,90 +49,92 @@ export default function Step1(props: StepProps) {
     return (
         <div className="step1-container">
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="input-group">
-                    <div className="input">
-                        <Input 
-                            label="Nome"
-                            type="text"
-                            placeholder="Digite seu nome"
-                            defaultValue={formData.name}
-                            register={register("name", { 
-                                required: "Nome é obrigatório",
-                                minLength: { value: 3, message: "Nome deve ter pelo menos 3 caracteres" }, 
-                                maxLength: { value: 50, message: "Nome deve ter no máximo 50 caracteres" }
-                            })}
-                            error={errors.name}
-                        />
+                <div className="data-container">
+                    <div className="input-group">
+                        <div className="input">
+                            <Input 
+                                label="Nome"
+                                type="text"
+                                placeholder="Digite seu nome"
+                                defaultValue={formData.name}
+                                register={register("name", { 
+                                    required: "Nome é obrigatório",
+                                    minLength: { value: 3, message: "Nome deve ter pelo menos 3 caracteres" }, 
+                                    maxLength: { value: 50, message: "Nome deve ter no máximo 50 caracteres" }
+                                })}
+                                error={errors.name}
+                            />
+                        </div>
+                        <div className="input">
+                            <Input 
+                                label="Sobrenome"
+                                type="text"
+                                placeholder="Digite seu sobrenome"
+                                defaultValue={formData.surname}
+                                register={register("surname", { 
+                                    required: "Sobrenome é obrigatório", 
+                                    minLength: { value: 3, message: "Sobrenome deve ter pelo menos 3 caracteres" }, 
+                                    maxLength: { value: 50, message: "Sobrenome deve ter no máximo 50 caracteres" }
+                                })}
+                                error={errors.surname}
+                            />
+                        </div>
                     </div>
-                    <div className="input">
-                        <Input 
-                            label="Sobrenome"
-                            type="text"
-                            placeholder="Digite seu sobrenome"
-                            defaultValue={formData.surname}
-                            register={register("surname", { 
-                                required: "Sobrenome é obrigatório", 
-                                minLength: { value: 3, message: "Sobrenome deve ter pelo menos 3 caracteres" }, 
-                                maxLength: { value: 50, message: "Sobrenome deve ter no máximo 50 caracteres" }
-                            })}
-                            error={errors.surname}
-                        />
-                    </div>
-                </div>
 
-                <div className="input-group">
-                    <div className="input">
-                        <Input 
-                            label="Celular"
-                            type="text"
-                            mask="(99) 99999-9999"
-                            placeholder="Digite seu celular"
-                            defaultValue={formData.phone}
-                            register={register("phone", { 
-                                required: "Celular é obrigatório" 
-                            })}
-                            error={errors.phone}
-                        />
+                    <div className="input-group">
+                        <div className="input">
+                            <Input 
+                                label="Celular"
+                                type="text"
+                                mask="(99) 99999-9999"
+                                placeholder="Digite seu celular"
+                                defaultValue={formData.phone}
+                                register={register("phone", { 
+                                    required: "Celular é obrigatório" 
+                                })}
+                                error={errors.phone}
+                            />
+                        </div>
+                        <div className="input">
+                            <Input 
+                                label="E-mail"
+                                type="email"
+                                placeholder="Digite seu e-mail"
+                                defaultValue={formData.email || ''}
+                                register={register("email", { 
+                                    required: "E-mail é obrigatório" 
+                                })}
+                                error={errors.email}
+                            />
+                        </div>
                     </div>
-                    <div className="input">
-                        <Input 
-                            label="E-mail"
-                            type="email"
-                            placeholder="Digite seu e-mail"
-                            defaultValue={formData.email || ''}
-                            register={register("email", { 
-                                required: "E-mail é obrigatório" 
-                            })}
-                            error={errors.email}
-                        />
-                    </div>
-                </div>
 
-                <div className="input-group">
-                    <div className="input">
-                        <Select 
-                            label="Gênero"
-                            options={GENDERS_MOCK}
-                            placeholder="Escolha seu gênero"
-                            defaultValue={formData.gender}
-                            register={register("gender", { 
-                                required: "Gênero é obrigatório" 
-                            })}
-                            error={errors.gender}
-                        />
-                    </div>
-                    <div className="input">
-                        <Input 
-                            label="CPF"
-                            mask="999.999.999-99"
-                            type="text"
-                            placeholder="Digite seu CPF"
-                            defaultValue={formData.document_cpf}
-                            register={register("document_cpf", { 
-                                required: "CPF é obrigatório" 
-                            })}
-                            error={errors.document_cpf}
-                        />
+                    <div className="input-group">
+                        <div className="input">
+                            <Select 
+                                label="Gênero"
+                                options={GENDERS_MOCK}
+                                placeholder="Escolha seu gênero"
+                                defaultValue={formData.gender}
+                                register={register("gender", { 
+                                    required: "Gênero é obrigatório" 
+                                })}
+                                error={errors.gender}
+                            />
+                        </div>
+                        <div className="input">
+                            <Input 
+                                label="CPF"
+                                mask="999.999.999-99"
+                                type="text"
+                                placeholder="Digite seu CPF"
+                                defaultValue={formData.document_cpf}
+                                register={register("document_cpf", { 
+                                    required: "CPF é obrigatório" 
+                                })}
+                                error={errors.document_cpf}
+                            />
+                        </div>
                     </div>
                 </div>
 

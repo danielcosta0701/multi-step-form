@@ -2,58 +2,68 @@
 @import '../../styles/base/mixins.scss';
 
 .stepper {
-  @include flex-center(column);
-  gap: $spacing-unit;
+  position: relative;
   width: 100%;
-  
+  display: flex;
+  align-items: center;
+  gap: $spacing-unit;
+  margin-top: 1rem;
+
+  .stepper-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: $border-color;
+    border-radius: $border-radius-large;
+    z-index: 1;
+    transform: translateY(-50%);
+  }
+
+  .stepper-progress {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    background-color: $primary-color;
+    z-index: 2;
+    transform: translateY(-50%);
+    transition: width $transition-speed;
+    border-radius: 1rem;
+  }
 
   .stepper-titles {
-    @include flex-center(row);
-    gap: calc($spacing-unit / 2);
+    display: flex;
     width: 100%;
+    justify-content: space-between;
+    position: relative;
+    z-index: 3;
+    margin-top: 1.5rem;
   }
 
   .step {
-    @include flex-center(column, start);
-    background-color: $border-color;
-    @include padding($padding-small);
-    @include border-radius($border-radius-small);
-    transition: background-color $transition-speed;
-    text-align: center;
-    flex: 1;
-    
-
-    .step-number {
-      width: 30px;
-      height: 30px;
-      @include border-radius(50%);
-      background-color: #fff;
-      color: $link-color;
-      @include flex-center();
-      font-weight: bold;
-      margin-bottom: calc($spacing-unit / 2); 
-    }
-
+    position: relative;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -4rem;
     .step-details {
-      @include flex-center(column);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       gap: calc($spacing-unit / 2);
-      
+      position: relative;
+      z-index: 5;
+
       h3 {
         margin: 0;
-        color: $text-color;
+        color: $medium-gray;
         @include font($body-font-size, bold);
-      }
-    }
-
-    &.active {
-      background-color: $primary-color;
-      color: white;
-
-      .step-details {
-        h3 {
-          color: white;
-        }
       }
     }
   }
 }
+

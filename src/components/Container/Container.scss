@@ -2,42 +2,29 @@
 @import '../../styles/base/mixins.scss';
 
 .container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
   width: 100%;
-  display: flex;
-  flex-direction: row; 
   flex-grow: 1;
 
   @media (max-width: 768px) {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
-    flex-direction: row;
+    grid-template-columns: repeat(12, 1fr);
   }
 
   @media (min-width: 1025px) {
-    flex-direction: row;
+    grid-template-columns: repeat(12, 1fr);
   }
-
-  &__left,
-  &__right {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-
-    @media (max-width: 768px) {
-      width: 100%;
-      flex: none;
-    }
-  }
-
+  
   &__left {
-    padding: $padding-medium;
-    background-size: cover; 
-    background-position: center;
-    background-repeat: no-repeat;
+    grid-column: span 7;
+    background-color: pink;
+    display: flex;
+    transition: all 0.5s ease-in-out;
 
     @media (max-width: 768px) {
       display: none;
@@ -45,10 +32,12 @@
   }
 
   &__right {
-    padding: $padding-large;
-    background-color: $background-color;
+    grid-column: span 5;
+    padding: $padding-medium;
+    background-color: white;
 
     @media (max-width: 768px) {
+      grid-column: span 1;
       padding: 0;
     }
   }

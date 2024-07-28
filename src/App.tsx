@@ -15,7 +15,6 @@ import carouselImage3 from '../src/assets/carousel/carousel-3.webp';
 
 function App() {
   const [currentStep, setCurrentStep] = useState(2);
-
   const prevStep = () => {
     if (currentStep > 0) {
       setCurrentStep(prevStep => prevStep - 1);
@@ -49,36 +48,41 @@ function App() {
     carouselImage3
   ];
 
-  const backgroundImage = `url(${carouselImages[currentStep]})`;
-
   return (
     <div className="app-container">
       <Header logo={<img src={logo} alt="Logo" />} />
-
       <Container>
-        <Container.Left style={{ backgroundImage }}>
-          <></>
+        <Container.Left>
+          <div className="carousel">
+            <div className="carousel-images">
+              <img src={carouselImages[currentStep]} alt={`Slide ${currentStep + 1}`} />
+            </div>
+          </div>
         </Container.Left>
 
         <Container.Right>
           <Box>
-            <h3>
-              {currentStep === 0
-                ? "Solicitar crédito" 
-                : currentStep === 1 
-                ? "Escolha o valor" 
-                : currentStep === 2
-                ? "Agora falta pouco!" 
-                : ""
-              }
-            </h3>
-            <Stepper 
-              currentStep={currentStep} 
-              steps={steps.map(step => ({
-                title: step.title,
-              }))} 
-            />
-            {steps[currentStep].content}
+            <div className="title-container">
+              <h3>
+                {currentStep === 0
+                  ? "Solicitar crédito" 
+                  : currentStep === 1 
+                  ? "Escolha o valor" 
+                  : currentStep === 2
+                  ? "Agora falta pouco!" 
+                  : ""
+                }
+              </h3>
+              <Stepper 
+                currentStep={currentStep} 
+                steps={steps.map(step => ({
+                  title: step.title,
+                }))} 
+              />
+            </div>
+            <div className="content-container">
+              {steps[currentStep].content}
+            </div>
           </Box>
         </Container.Right>
       </Container>

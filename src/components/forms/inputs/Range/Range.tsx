@@ -12,7 +12,7 @@ interface RangeProps {
     register: UseFormRegisterReturn;
     error?: FieldError;
     className?: string;
-    format?: boolean; // Nova propriedade para formatar o valor
+    format?: boolean;
 }
 
 export const Range = (props: RangeProps) => {

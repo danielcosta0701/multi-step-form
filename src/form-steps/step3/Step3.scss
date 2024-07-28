@@ -3,26 +3,25 @@
 
 .step3-container {
   text-align: center;
+  height: 100%;
   gap: $spacing-unit;
-  @include flex-center(column);
+  flex-wrap: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 
   .thank-you-message {
-    @include flex-center(column);
-    gap: $spacing-unit;
-    margin-bottom: $spacing-unit;
-
     p {
       font-size: $body-font-size;
       color: $text-color;
-      
     }
   }
 
   .button-container {
     display: flex;
+    margin-top: $spacing-unit;
     justify-content: center;
-    gap: $spacing-unit;
-    margin-top: calc($spacing-unit * 2);
   }
 
   .button {

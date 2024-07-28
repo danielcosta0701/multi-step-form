@@ -2,7 +2,6 @@ import './Stepper.scss';
 
 interface Step {
   title: string;
-  description: string;
 }
 
 interface StepperProps {
@@ -24,7 +23,6 @@ const Stepper = (props: StepperProps) => {
             <div className="step-number">{index + 1}</div>
             <div className="step-details">
               <h3>{step.title}</h3>
-              <p>{step.description}</p>
             </div>
           </div>
         ))}

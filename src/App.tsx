@@ -9,9 +9,9 @@ import { Footer } from './components/Footer/Footer';
 import { Container } from './components/Container/Container';
 import { Stepper } from './components/Stepper/Stepper';
 import logo from '../src/assets/logo.webp';
-import carouselImage1 from '../src/assets/background.webp';
-import carouselImage2 from '../src/assets/background.webp';
-import carouselImage3 from '../src/assets/background.webp';
+import carouselImage1 from '../src/assets/carousel/carousel-2.webp';
+import carouselImage2 from '../src/assets/carousel/carousel-1.webp';
+import carouselImage3 from '../src/assets/carousel/carousel-3.webp';
 
 function App() {
   const [currentStep, setCurrentStep] = useState(2);
@@ -31,17 +31,14 @@ function App() {
   const steps = [
     {
       title: "Dados Pessoais",
-      description: "Preencha seus dados pessoais.",
       content: <Step1 prevStep={prevStep} nextStep={nextStep} />
     },
     {
       title: "Valores",
-      description: "Escolha o valor e a melhor opção para você.",
       content: <Step2 prevStep={prevStep} nextStep={nextStep} />
     },
     {
       title: "Sucesso",
-      description: "Sua solicitação foi enviada.",
       content: <Step3 prevStep={prevStep} nextStep={nextStep} />
     }
   ];
@@ -79,7 +76,6 @@ function App() {
               currentStep={currentStep} 
               steps={steps.map(step => ({
                 title: step.title,
-                description: step.description
               }))} 
             />
             {steps[currentStep].content}

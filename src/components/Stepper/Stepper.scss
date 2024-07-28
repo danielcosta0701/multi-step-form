@@ -4,6 +4,7 @@
 .stepper {
   @include flex-center(column);
   gap: $spacing-unit;
+  width: 100%;
   
 
   .stepper-titles {
@@ -18,8 +19,8 @@
     @include padding($padding-small);
     @include border-radius($border-radius-small);
     transition: background-color $transition-speed;
-    flex: 1;
     text-align: center;
+    flex: 1;
     
 
     .step-number {
@@ -41,11 +42,6 @@
         margin: 0;
         color: $text-color;
         @include font($body-font-size, bold);
-      }
-
-      p {
-        margin: 0;
-        @include font(14px, normal);
       }
     }
 

@@ -2,15 +2,22 @@
 @import '../../styles/base/mixins.scss';
 
 .footer {
-  background-color: $background-color;
-  color: $primary-color;
+  background-color: $secondary-color;
   padding: $padding-medium;
   text-align: center;
   font-family: $font-primary;
-  font-weight: bold;
-  border-top: 1px solid lighten($background-color, 10%);
+
   .footer-content {
     margin: 0;
+
+    a {
+      color: white;
+      @include transition(color);
+    }
+
+    a:hover {
+      color: $primary-color;
+    }
   }
 
   p {

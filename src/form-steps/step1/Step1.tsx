@@ -28,7 +28,7 @@ export default function Step1(props: StepProps) {
         reset, 
         formState: { errors, isValid }
     } = useForm<FormStep1>({
-        mode: "onChange"
+        mode: "onBlur"
     });
 
     const onSubmit: SubmitHandler<FormStep1> = (data) => {
@@ -85,6 +85,7 @@ export default function Step1(props: StepProps) {
                         <Input 
                             label="Celular"
                             type="text"
+                            mask="(99) 99999-9999"
                             placeholder="Digite seu celular"
                             defaultValue={formData.phone}
                             register={register("phone", { 

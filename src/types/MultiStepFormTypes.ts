@@ -8,6 +8,7 @@ export type GeneralFormData = {
     loan_amount: number | null;
     interest_rate: number | null;
     number_of_installments: number | null;
+    total_value: number | string | null
 };
 
 export type MultiStepFormContextType = {

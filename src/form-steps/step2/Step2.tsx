@@ -38,6 +38,7 @@ export default function Step2(props: StepProps) {
       loan_amount: data.loan_amount,
       interest_rate: interestRate,
       number_of_installments: data.number_of_installments,
+      total_value: totalValue
     };
 
     setFormData((prevFormData: GeneralFormData) => ({ ...prevFormData, ...obj }));
@@ -88,7 +89,7 @@ export default function Step2(props: StepProps) {
             format={true}
           />
           <div className="total-value">
-            <span>Total: {formatCurrency(totalValue)}</span>
+            <span>Total a pagar: {formatCurrency(totalValue)}</span>
           </div>
         </div>
 

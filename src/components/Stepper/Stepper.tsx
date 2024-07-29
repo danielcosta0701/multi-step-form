@@ -2,7 +2,6 @@ import './Stepper.scss';
 
 interface Step {
   title: string;
-  description: string;
 }
 
 interface StepperProps {
@@ -13,18 +12,20 @@ interface StepperProps {
 const Stepper = (props: StepperProps) => {
   const { currentStep, steps } = props;
 
+  const progressWidth = `${(currentStep / (steps.length - 1)) * 100}%`;
+
   return (
     <div className="stepper">
+      <div className="stepper-line" />
+      <div className="stepper-progress" style={{ width: progressWidth }} />
       <div className="stepper-titles">
         {steps.map((step, index) => (
           <div
             key={index}
-            className={`step ${currentStep === index ? 'active' : ''}`}
+            className={`step ${currentStep >= index ? 'active' : ''}`}
           >
-            <div className="step-number">{index + 1}</div>
             <div className="step-details">
-              <h3>{step.title}</h3>
-              <p>{step.description}</p>
+              <h3>{`${index + 1}. ${step.title}`}</h3>
             </div>
           </div>
         ))}

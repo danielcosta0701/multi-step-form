@@ -85,11 +85,11 @@ export default function Step2(props: StepProps) {
             register={register("loan_amount", { required: "Valor é obrigatório." })}
             error={errors.loan_amount}
             className="input"
+            format={true}
           />
-        </div>
-
-        <div className="total-value">
-          <span>Total: {formatCurrency(totalValue)}</span>
+          <div className="total-value">
+            <span>Total: {formatCurrency(totalValue)}</span>
+          </div>
         </div>
 
         <div className="button-container">

@@ -1,4 +1,3 @@
-import { Menu } from '../Menu/Menu';
 import './Header.scss';
 
 interface HeaderProps {
@@ -17,7 +16,6 @@ const Header = (props: HeaderProps) => {
             <div className="header-logo">
                 {logo}
             </div>
-            <Menu />
         </header>
     );
 }

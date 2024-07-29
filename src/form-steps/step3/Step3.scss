@@ -2,39 +2,39 @@
 @import '../../styles/base/mixins.scss';
 
 .step3-container {
-  @include padding($padding-large);
   text-align: center;
-  background-color: $background-color;
+  height: 100%;
+  gap: $spacing-unit;
+  flex-wrap: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 
   .thank-you-message {
-    margin-bottom: $margin-large;
-
-    h1 {
-      font-size: $heading-font-size;
-      color: $primary-color;
-    }
-
     p {
       font-size: $body-font-size;
       color: $text-color;
-      margin: $margin-small 0;
     }
   }
 
   .request-data {
-    margin-bottom: $margin-large;
+    background-color: $accent-color;
+    padding: $padding-medium;
+    border-radius: $border-radius-medium;
+    margin: calc($spacing-unit / 2) 0;
+    box-shadow: $box-shadow-small;
+    border: 1px solid $border-color;
 
     h2 {
       font-size: $subheading-font-size;
-      color: $primary-color;
+      color: $medium-gray;
       margin-bottom: $margin-medium;
     }
 
     .data-list-container {
-      background-color: $accent-color;
       padding: $padding-medium;
       border-radius: $border-radius-medium;
-      box-shadow: $box-shadow-medium;
 
       .data-list {
         list-style: none;
@@ -49,10 +49,12 @@
           margin-bottom: $spacing-unit;
           font-size: $body-font-size;
           color: $text-color;
-          border: 1px solid $border-color;
+          border-bottom: 1px solid $border-color;
           padding: $padding-small;
-          border-radius: $border-radius-small;
-          background-color: #fff;
+          display: flex;
+          flex-direction: column;
+          justify-items: end;
+          gap: calc($spacing-unit / 2);
 
           strong {
             color: $text-color;
@@ -64,8 +66,11 @@
 
   .button-container {
     display: flex;
-    justify-content: center;
-    gap: $spacing-unit;
     margin-top: $spacing-unit;
+    justify-content: center;
+  }
+
+  .button {
+    width: 120px;
   }
 }

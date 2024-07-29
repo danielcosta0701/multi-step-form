@@ -12,6 +12,7 @@ interface RangeProps {
     register: UseFormRegisterReturn;
     error?: FieldError;
     className?: string;
+    format?: boolean;
 }
 
 export const Range = (props: RangeProps) => {
@@ -24,7 +25,8 @@ export const Range = (props: RangeProps) => {
         register,
         defaultValue,
         error,
-        className
+        className,
+        format = false
     } = props;
 
     const [currentValue, setCurrentValue] = useState(value ?? defaultValue ?? min);
@@ -33,6 +35,12 @@ export const Range = (props: RangeProps) => {
         const value = Number(event.target.value);
         setCurrentValue(value);
     };
+
+    const formatCurrency = (value: number) => {
+        return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    };
+
+    const displayValue = format ? formatCurrency(currentValue) : currentValue;
 
     return (
         <div className={`range-container ${className}`}>
@@ -49,7 +57,7 @@ export const Range = (props: RangeProps) => {
                 {...register}
                 onInput={handleInputChange}
             />
-            <output>{currentValue}</output>
+            <output>{displayValue}</output>
             {error && <p className="error-message">{error.message}</p>}
         </div>
     );

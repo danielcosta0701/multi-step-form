@@ -1,5 +1,6 @@
 import { UseFormRegisterReturn, FieldError } from 'react-hook-form';
 import './Input.scss';
+import ReactInputMask from 'react-input-mask';
 
 interface InputProps {
     label: string;
@@ -17,8 +18,9 @@ export const Input = (props: InputProps) => {
         type = "text", 
         placeholder,
         register,
-        defaultValue = '',
+        defaultValue = "",
         error,
+        mask
     } = props;
 
     return (
@@ -26,13 +28,24 @@ export const Input = (props: InputProps) => {
             <label>
                 {label}
             </label>
-            <input
-                type={type}
-                placeholder={placeholder}
-                defaultValue={defaultValue || ''}
-                {...register}
-                className={error ? 'error' : ''}
-            />
+            {mask ? (
+                <ReactInputMask
+                    type={type}
+                    placeholder={placeholder}
+                    defaultValue={defaultValue || ""}
+                    {...register}
+                    className={error ? "error" : ""}
+                    mask={mask}
+                />
+            ) : (
+                <input
+                    type={type}
+                    placeholder={placeholder}
+                    defaultValue={defaultValue || ""}
+                    {...register}
+                    className={error ? "error'" : ""}
+                />
+            )}
             {error && <p className="error-message">{error.message}</p>}
         </div>
     );

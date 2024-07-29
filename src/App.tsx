@@ -9,12 +9,12 @@ import { Footer } from './components/Footer/Footer';
 import { Container } from './components/Container/Container';
 import { Stepper } from './components/Stepper/Stepper';
 import logo from '../src/assets/logo.webp';
-import carouselImage1 from '../src/assets/carousel/carousel-2.webp';
-import carouselImage2 from '../src/assets/carousel/carousel-1.webp';
-import carouselImage3 from '../src/assets/carousel/carousel-3.webp';
+import carouselImage1 from '../src/assets/carousel/grupo-digital.webp';
+import carouselImage2 from '../src/assets/carousel/man.webp';
+import carouselImage3 from '../src/assets/carousel/woman.webp';
 
 function App() {
-  const [currentStep, setCurrentStep] = useState(2);
+  const [currentStep, setCurrentStep] = useState(0);
   const prevStep = () => {
     if (currentStep > 0) {
       setCurrentStep(prevStep => prevStep - 1);
@@ -30,14 +30,17 @@ function App() {
   const steps = [
     {
       title: "Dados Pessoais",
+      pageTitle: "Solicitar crédito",
       content: <Step1 prevStep={prevStep} nextStep={nextStep} />
     },
     {
       title: "Valores",
+      pageTitle: "Escolha o valor",
       content: <Step2 prevStep={prevStep} nextStep={nextStep} />
     },
     {
       title: "Sucesso",
+      pageTitle: "Agora falta pouco!",
       content: <Step3 prevStep={prevStep} nextStep={nextStep} />
     }
   ];
@@ -63,16 +66,7 @@ function App() {
         <Container.Right>
           <Box>
             <div className="title-container">
-              <h3>
-                {currentStep === 0
-                  ? "Solicitar crédito" 
-                  : currentStep === 1 
-                  ? "Escolha o valor" 
-                  : currentStep === 2
-                  ? "Agora falta pouco!" 
-                  : ""
-                }
-              </h3>
+              <h3>{steps[currentStep].pageTitle}</h3>
               <Stepper 
                 currentStep={currentStep} 
                 steps={steps.map(step => ({

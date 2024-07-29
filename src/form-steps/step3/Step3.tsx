@@ -5,7 +5,7 @@ import './Step3.scss';
 
 export default function Step3(props: StepProps) {
     const { prevStep } = props;
-    const { formData, setFormData } = useMultiStepForm();
+    const { formData } = useMultiStepForm();
 
     return (
         <div className="step3-container">
